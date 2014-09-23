@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets" >
+            <file
+                name="data/particle-star.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\data\particle-star.png" />
+            <file
+                name="data/test.p"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\data\test.p" />
+            <file
+                name="p.atlas"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p.atlas" />
+            <file
+                name="p.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p.png" />
+            <file
+                name="p10.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p10.png" />
+            <file
+                name="p2.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p2.png" />
+            <file
+                name="p3.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p3.png" />
+            <file
+                name="p4.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p4.png" />
+            <file
+                name="p5.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p5.png" />
+            <file
+                name="p6.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p6.png" />
+            <file
+                name="p7.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p7.png" />
+            <file
+                name="p8.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p8.png" />
+            <file
+                name="p9.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\p9.png" />
+            <file
+                name="puzzle"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\puzzle" />
+            <file
+                name="puzzle.fnt"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\puzzle.fnt" />
+            <file
+                name="puzzle.hiero"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\puzzle.hiero" />
+            <file
+                name="puzzle.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\puzzle.png" />
+            <file
+                name="readme.txt"
+                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\assets\readme.txt" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\src\debug\assets" />
+    </dataSet>
+
+</merger>

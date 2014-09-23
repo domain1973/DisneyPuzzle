@@ -1,0 +1,228 @@
+package com.ads.puzzle.disnep.window;
+
+import com.ads.puzzle.disnep.Assets;
+import com.ads.puzzle.disnep.Puzzle;
+import com.ads.puzzle.disnep.Settings;
+import com.ads.puzzle.disnep.screen.AboutScreen;
+import com.ads.puzzle.disnep.screen.GameScreen;
+import com.ads.puzzle.disnep.screen.GateScreen;
+import com.ads.puzzle.disnep.screen.ReadmeScreen;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Window;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * Created by Administrator on 2014/7/20.
+ */
+public class SupsendWin extends BaseWin {
+    private Puzzle puzzle;
+    private GameScreen gameScreen;
+    private float win_H;
+    private float win_Y;
+    private int level;
+    private Image noMusic;
+    private Image noSound;
+
+    public SupsendWin(Puzzle p, BitmapFont ft, GameScreen gs, int lv) {
+        super("", new Window.WindowStyle(ft, Color.WHITE, new TextureRegionDrawable(
+                Assets.gameBg)));
+        puzzle = p;
+        gameScreen = gs;
+        level = lv;
+        create();
+    }
+
+    public void create() {
+        final float btnSize = Assets.WIDTH / 6;
+        gameScreen.getStage().addActor(layerBg);
+        win_H = btnSize * 4;
+        win_Y = (Assets.HEIGHT - win_H) / 2;
+        setBounds(0, win_Y, Assets.WIDTH, win_H);
+        float y2 = win_H / 5;
+        float y1 = win_H / 5 * 3;
+        float x = Assets.WIDTH / 6;
+
+        noSound = new Image(Assets.forbid);
+        ImageButton gate = new ImageButton(new TextureRegionDrawable(Assets.gate), new TextureRegionDrawable(Assets.gate));
+        gate.setBounds(x, y1, btnSize, btnSize);
+        ImageButton share = new ImageButton(new TextureRegionDrawable(Assets.share), new TextureRegionDrawable(Assets.share));
+        share.setBounds(x * 2, y1, btnSize, btnSize);
+        ImageButton buy = new ImageButton(new TextureRegionDrawable(Assets.buy), new TextureRegionDrawable(Assets.buy));
+        buy.setBounds(x * 3, y1, btnSize, btnSize);
+        ImageButton continues = new ImageButton(new TextureRegionDrawable(Assets.continueTr), new TextureRegionDrawable(Assets.continueTr));
+        continues.setBounds(x * 4, y1, btnSize, btnSize);
+
+        final ImageButton music = new ImageButton(new TextureRegionDrawable(Assets.music), new TextureRegionDrawable(Assets.music));
+        music.setBounds(x, y2, btnSize, btnSize);
+        noMusic = new Image(Assets.forbid);
+        noMusic.setBounds(music.getX(), music.getY(), btnSize, btnSize);
+        ImageButton sound = new ImageButton(new TextureRegionDrawable(Assets.sound), new TextureRegionDrawable(Assets.sound));
+        sound.setBounds(x * 2, y2, btnSize, btnSize);
+        noSound = new Image(Assets.forbid);
+        noSound.setBounds(sound.getX(), sound.getY(), btnSize, btnSize);
+        ImageButton about = new ImageButton(new TextureRegionDrawable(Assets.about), new TextureRegionDrawable(Assets.about));
+        about.setBounds(x * 3, y2, btnSize, btnSize);
+        ImageButton help = new ImageButton(new TextureRegionDrawable(Assets.help), new TextureRegionDrawable(Assets.help));
+        help.setBounds(x * 4, y2, btnSize, btnSize);
+        Gdx.input.setInputProcessor(gameScreen.getStage());
+
+        buy.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                puzzle.getPEvent().pay();
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
+        music.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                addActor(noMusic);
+                Settings.musicEnabled = false;
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
+        noMusic.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                noMusic.remove();
+                Settings.musicEnabled = true;
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
+        sound.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                addActor(noSound);
+                Settings.soundEnabled = false;
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
+        noSound.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                noSound.remove();
+                Settings.soundEnabled = true;
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
+        about.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                puzzle.setScreen(new AboutScreen(puzzle, gameScreen));
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
+        help.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                puzzle.setScreen(new ReadmeScreen(puzzle, gameScreen));
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
+        gate.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                puzzle.setScreen(new GateScreen(puzzle, level));
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
+        continues.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                gameScreen.resumeTimer();
+                layerBg.remove();
+                SupsendWin.this.remove();
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
+        addActor(music);
+        if (!Settings.musicEnabled) {
+            addActor(noMusic);
+        }
+        addActor(sound);
+        if (!Settings.soundEnabled) {
+            addActor(noSound);
+        }
+        addActor(about);
+        addActor(help);
+        addActor(gate);
+        addActor(share);
+        addActor(buy);
+        addActor(continues);
+        invokSpot();
+    }
+
+    private void invokSpot() {
+        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+        Runnable runner = new Runnable() {
+            public void run() {
+                puzzle.getPEvent().spotAM();
+            }
+        };
+        executor.schedule(runner, 15000, TimeUnit.MILLISECONDS);
+    }
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\gdx-jnigen-a569f74d1af8a6b9fb905bad635caf289366fa80.jar"
+        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\gdx-jnigen.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="d952baf9ce9e225a91229de2f900ab0eb1c5de90"/>
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\YoumiSdk_v4.09_2014-06-16-158c2254ce28e74286de886dba85d249a593caeb.jar"
+        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\YoumiSdk_v4.09_2014-06-16.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="160f21765370085650cbc089377fecb052903d17"/>
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\UPPayPluginEx-e163efb3936dd3edb2ec7ce513e48ff7ceabd3af.jar"
+        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\UPPayPluginEx.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="30530a73af7a664d10f9a88a3cb264b765be7f09"/>
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\core-1.0-3131841b11f1017a29ef79d2ed549807d67ae283.jar"
+        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\core\build\libs\core-1.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="53957919dd70ed124e186345853148c1c959735c"/>
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\umilocalpaysdk-V221-72dc35567f642d7200c49ea957194a6073a50651.jar"
+        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\umilocalpaysdk-V221.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e84c6949d4329bc95b4e5d90555bbe1f35873edc"/>
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\gdx-backend-android-1.1.0-ae3334d5a87b3e7a55b5b1b4150a531a5e2def49.jar"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-backend-android\1.1.0\be72ba2987612670c7e9533bdaaa999955752237\gdx-backend-android-1.1.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="be72ba2987612670c7e9533bdaaa999955752237"/>
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\gdx-1.1.0-097daca50f1daa363ba4898ae0a70e0301ccd62f.jar"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx\1.1.0\686f5a609c717eb0769d3b954c501a49bf4fe351\gdx-1.1.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="686f5a609c717eb0769d3b954c501a49bf4fe351"/>
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\UPPayAssistEx-48feadf5cf1593a88b09e00d97bdc5ca45966764.jar"
+        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\UPPayAssistEx.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="63776836123d01eb559a4924bb180d659970f1d1"/>
+
+</pre-dex-items>
