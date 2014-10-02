@@ -32,7 +32,7 @@ public class MainScreen extends BaseScreen {
         float btnPlayX = (Assets.WIDTH - playSize) / 2;
         float otherX = otherSize;
         float btnPlayY = Assets.HEIGHT / 3;
-        ImageButton playBtn = new ImageButton(new TextureRegionDrawable(Assets.playBtn), new TextureRegionDrawable(Assets.playBtn));
+        ImageButton playBtn = new ImageButton(new TextureRegionDrawable(Assets.playBtn), new TextureRegionDrawable(Assets.playBtnDown));
         playBtn.setBounds(btnPlayX, btnPlayY, playSize, playSize);
         ImageButton helpBtn = new ImageButton(new TextureRegionDrawable(Assets.help), new TextureRegionDrawable(Assets.help));
         float y = btnPlayY - 3*otherSize/2;
@@ -90,7 +90,7 @@ public class MainScreen extends BaseScreen {
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                puzzle.getPEvent().exit();
+                puzzle.getPEvent().exit(MainScreen.this);
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -109,6 +109,12 @@ public class MainScreen extends BaseScreen {
     @Override
     public void dispose() {
         getGameFont().dispose();
+        getOtherFont().dispose();
         getStage().dispose();
     }
+
+    public void changeMoreGameScreen() {
+        getPuzzle().setScreen(new MoreGameScreen(getPuzzle(), this));
+    }
+
 }

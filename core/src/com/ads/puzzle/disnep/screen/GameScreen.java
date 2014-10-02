@@ -53,7 +53,6 @@ public class GameScreen extends BaseScreen {
     private int areaId;
     private int seconds;
     private String timeStr;
-    private float x_light;
     private boolean isShow;
     private int starNum;
     private Label labTime;
@@ -102,26 +101,8 @@ public class GameScreen extends BaseScreen {
 
     private void createTopBar() {
         super.createBtns();
-        ImageButton help = new ImageButton(new TextureRegionDrawable(Assets.help));
-        help.setBounds(Assets.WIDTH - 4 * Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOP_BTN_SIZE, Assets.TOP_BTN_SIZE);
-        help.addListener(new InputListener() {
-            @Override
-            public boolean touchDown(InputEvent event, float x, float y,
-                                     int pointer, int button) {
-                return true;
-            }
-
-            @Override
-            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                getPuzzle().setScreen(new ReadmeScreen(getPuzzle(), GameScreen.this));
-                super.touchUp(event, x, y, pointer, button);
-            }
-        });
-        addActor(help);
-
         ImageButton sos = new ImageButton(new TextureRegionDrawable(Assets.light));
-        x_light = Assets.WIDTH - 3 * Assets.TOPBAR_HEIGHT - 5;
-        sos.setBounds(x_light, getY_bar(), Assets.TOP_BTN_SIZE, Assets.TOP_BTN_SIZE);
+        sos.setBounds(Assets.WIDTH - 3 * Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOP_BTN_SIZE, Assets.TOP_BTN_SIZE);
         sos.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
@@ -189,18 +170,21 @@ public class GameScreen extends BaseScreen {
 
     private void addLabels() {
         float fontSize = 36;//default
-        BitmapFont gameFont = getGameFont();
+        BitmapFont font = getOtherFont();
         int scale = (int)(Assets.TOPBAR_HEIGHT / fontSize);
-        gameFont.setScale(scale);
-        labTime = new Label("", new Label.LabelStyle(gameFont, Color.YELLOW));
-        labTime.setPosition((Assets.WIDTH  - Assets.PIECE_SIZE/2)/2, Assets.HEIGHT - Assets.TOPBAR_HEIGHT - Assets.PIECE_SIZE);
+        font.setScale(scale);
+        BitmapFont.TextBounds bounds = font.getBounds("00");
+        labTime = new Label("", new Label.LabelStyle(font, Color.YELLOW));
+        labTime.setPosition(Assets.TOP_BTN_SIZE, getY_bar() - bounds.height);
         addActor(labTime);
-        labCount = new Label("", new Label.LabelStyle(gameFont, Color.RED));
-        labCount.setPosition(x_light, Assets.HEIGHT - Assets.TOPBAR_HEIGHT/2);
+        float w = bounds.width;
+        labCount = new Label("", new Label.LabelStyle(font, Color.RED));
+        labCount.setPosition(Assets.WIDTH - 3*Assets.TOP_BTN_SIZE - w/3, Assets.HEIGHT - Assets.TOPBAR_HEIGHT/2);
         addActor(labCount);
-        Label labC = new Label("挑战", new Label.LabelStyle(gameFont, Color.WHITE));
-        labC.setPosition(Assets.SPRITESIZE *3/2,  Assets.PIECE_SIZE + Assets.TOPBAR_HEIGHT);
-        addActor(labC);
+
+        Label c = new Label("挑战", new Label.LabelStyle(getGameFont(), Color.YELLOW));
+        c.setPosition(Assets.SPRITESIZE *3/2,  Assets.TOP_BTN_SIZE);
+        addActor(c);
     }
 
     private void initEffect() {

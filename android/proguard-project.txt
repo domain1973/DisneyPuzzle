@@ -27,3 +27,5 @@
 -keep class net.umipay.android.** { *; }
 -keep class com.UCMobile.** { *; }
 -keep class com.unionpay.** { *; }
+-keep class com.tencent.mm.sdk.modelmsg.WXMediaMessage { *;}
+-keep class com.tencent.mm.sdk.modelmsg.** implements com.tencent.mm.sdk.modelmsg.WXMediaMessage$IMediaObject {*;}

@@ -21,6 +21,7 @@ public class BaseScreen extends ScreenAdapter {
     private Batch batch;
     private Puzzle puzzle;
     private BitmapFont gameFont;
+    private BitmapFont otherFont;
     private float y_bar;
     protected ImageButton returnBtn;
 
@@ -31,6 +32,8 @@ public class BaseScreen extends ScreenAdapter {
         batch = stage.getBatch();
         gameFont = new BitmapFont(Gdx.files.internal("puzzle.fnt"),
                 Gdx.files.internal("puzzle.png"), false);
+        otherFont = new BitmapFont(Gdx.files.internal("game.fnt"),
+                Gdx.files.internal("game.png"), false);
     }
 
     @Override
@@ -43,7 +46,7 @@ public class BaseScreen extends ScreenAdapter {
 
     protected void createBtns() {
         returnBtn = new ImageButton(new TextureRegionDrawable(Assets.returnTr));
-        returnBtn.setBounds(0, getY_bar(),Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
+        returnBtn.setBounds(0, getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
         addActor(returnBtn);
     }
 
@@ -65,6 +68,10 @@ public class BaseScreen extends ScreenAdapter {
 
     public BitmapFont getGameFont() {
         return gameFont;
+    }
+
+    public BitmapFont getOtherFont() {
+        return otherFont;
     }
 
     public Stage getStage() {

@@ -14,7 +14,7 @@ public class Answer {
     public final static int GRADE_4 = 12;
 
     public final static String[] TITLES = new String[]{
-            "时间已到,闯关失败.", "恭喜您过关了!", "您真棒!", "您是天才!"};
+            "时间已到!", "恭喜您过关了!", "您真牛!", "您真棒!"};
 
     public final static String[] VALUES =
             {"03,11,22,30",

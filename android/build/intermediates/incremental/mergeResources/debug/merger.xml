@@ -2,130 +2,524 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res" >
+        <source path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res" >
             <file
                 name="data"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable\data.bin"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable\data.bin"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="data_high"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable\data_high.bin"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable\data_high.bin"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="data_low"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable\data_low.bin"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable\data_low.bin"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="mobilepayplugin"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable\mobilepayplugin.bin"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable\mobilepayplugin.bin"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="umipay_btn_close"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable\umipay_btn_close.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable\umipay_btn_close.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="umipay_layout_pressed"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable\umipay_layout_pressed.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable\umipay_layout_pressed.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="umipay_strip"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable\umipay_strip.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable\umipay_strip.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="umipay_strip_bg_with_title"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable\umipay_strip_bg_with_title.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable\umipay_strip_bg_with_title.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-hdpi\ic_launcher.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-hdpi\ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ssdk_oks_ptr_ptr"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-hdpi\ssdk_oks_ptr_ptr.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="umipay_btn_close_normal"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-hdpi\umipay_btn_close_normal.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-hdpi\umipay_btn_close_normal.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="umipay_btn_close_pressed"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-hdpi\umipay_btn_close_pressed.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-hdpi\umipay_btn_close_pressed.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="umipay_default_btn_pressed_bg"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-hdpi\umipay_default_btn_pressed_bg.9.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-hdpi\umipay_default_btn_pressed_bg.9.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="umipay_strip_bg"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-hdpi\umipay_strip_bg.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-hdpi\umipay_strip_bg.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="xiaozi"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-hdpi\xiaozi.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-hdpi\xiaozi.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-mdpi\ic_launcher.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-mdpi\ic_launcher.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="xiaozi"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-mdpi\xiaozi.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-mdpi\xiaozi.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
+                name="auth_follow_cb_chd"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\auth_follow_cb_chd.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="auth_follow_cb_unc"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\auth_follow_cb_unc.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="auth_title_back"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\auth_title_back.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_back_nor"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\btn_back_nor.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="btn_cancel_back"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\btn_cancel_back.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="edittext_back"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\edittext_back.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="gray_point"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\gray_point.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_launcher"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-xhdpi\ic_launcher.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="img_cancel"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\img_cancel.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_douban"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_douban.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_dropbox"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_dropbox.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_email"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_email.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_evernote"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_evernote.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_facebook"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_facebook.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_flickr"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_flickr.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_foursquare"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_foursquare.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_googleplus"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_googleplus.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_instagram"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_instagram.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_kaixin"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_kaixin.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_line"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_line.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_linkedin"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_linkedin.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_mingdao"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_mingdao.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_neteasemicroblog"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_neteasemicroblog.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_pinterest"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_pinterest.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_qq"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_qq.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_qzone"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_qzone.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_renren"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_renren.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_shortmessage"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_shortmessage.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_sinaweibo"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_sinaweibo.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_sohumicroblog"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_sohumicroblog.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_sohusuishenkan"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_sohusuishenkan.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_tencentweibo"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_tencentweibo.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_tumblr"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_tumblr.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_twitter"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_twitter.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_vkontakte"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_vkontakte.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_wechat"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_wechat.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_wechatfavorite"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_wechatfavorite.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_wechatmoments"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_wechatmoments.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_yixin"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_yixin.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_yixinmoments"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_yixinmoments.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="logo_youdao"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_youdao.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="pin"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\pin.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="share_vp_back"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\share_vp_back.9.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ssdk_auth_title_back"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\ssdk_auth_title_back.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ssdk_back_arr"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\ssdk_back_arr.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ssdk_logo"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\ssdk_logo.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ssdk_oks_shake_to_share_back"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\ssdk_oks_shake_to_share_back.xml"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ssdk_oks_yaoyiyao"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\ssdk_oks_yaoyiyao.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ssdk_title_div"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\ssdk_title_div.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="title_back"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\title_back.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="title_shadow"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\title_shadow.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="white_point"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\white_point.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="xiaozi"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-xhdpi\xiaozi.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\xiaozi.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
                 name="ic_launcher"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-xxhdpi\ic_launcher.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xxhdpi\ic_launcher.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="xiaozi"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\drawable-xxhdpi\xiaozi.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xxhdpi\xiaozi.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="umipay_base"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\layout\umipay_base.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\layout\umipay_base.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="umipay_layout_webview"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\layout\umipay_layout_webview.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\layout\umipay_layout_webview.xml"
                 qualifiers=""
                 type="layout" />
             <file
                 name="umipay_titlebar"
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\layout\umipay_titlebar.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\layout\umipay_titlebar.xml"
                 qualifiers=""
                 type="layout" />
             <file
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\values\strings.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values\oks_strings.xml"
+                qualifiers="" >
+                <string name="list_friends" >%s的朋友
+                </string>
+                <string name="release_to_refresh" >松开刷新
+                </string>
+                <string name="select_one_plat_at_least" >请选择一个目标平台
+                </string>
+                <string name="share_completed" >分享成功
+                </string>
+                <string name="share_failed" >分享失败
+                </string>
+                <string name="finish" >完成
+                </string>
+                <string name="refreshing" >刷新中…
+                </string>
+                <string name="share_canceled" >分享已取消
+                </string>
+                <string name="shake2share" >摇晃手机！
+                </string>
+                <string name="sharing" >分享操作正在后台进行…
+                </string>
+                <string name="cancel" >取消
+                </string>
+                <string name="multi_share" >图文分享
+                </string>
+                <string name="pull_to_refresh" >下拉刷新
+                </string>
+                <string name="share_to" >分享到
+                </string>
+                <string name="share" >分享
+                </string>
+            </file>
+            <file
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values\ssdk_strings.xml"
+                qualifiers="" >
+                <string name="yixin_client_inavailable" >目前您的易信版本过低或未安装易信，需要安装易信才能使用
+                </string>
+                <string name="linkedin" >领英
+                </string>
+                <string name="youdao" >有道云笔记
+                </string>
+                <string name="facebook" >Facebook
+                </string>
+                <string name="instagram" >Instagram
+                </string>
+                <string name="vkontakte" >VK
+                </string>
+                <string name="line_client_inavailable" >目前您的Line版本过低或未安装易信，需要安装Line才能使用
+                </string>
+                <string name="tencentweibo" >腾讯微博
+                </string>
+                <string name="wechatmoments" >微信朋友圈
+                </string>
+                <string name="evernote" >印象笔记
+                </string>
+                <string name="kaixin" >开心网
+                </string>
+                <string name="douban" >豆瓣
+                </string>
+                <string name="qzone" >QQ空间
+                </string>
+                <string name="share_to_qzone" >分享到QQ空间
+                </string>
+                <string name="foursquare" >FourSquare
+                </string>
+                <string name="qq" >QQ
+                </string>
+                <string name="sohumicroblog" >搜狐微博
+                </string>
+                <string name="pinterest_client_inavailable" >Pinterest版本过低或者没有安装，需要升级或安装Pinterest才能使用！
+                </string>
+                <string name="google_plus_client_inavailable" >Google+ 版本过低或者没有安装，需要升级或安装Google+才能使用！
+                </string>
+                <string name="wechat" >微信好友
+                </string>
+                <string name="tumblr" >Tumblr
+                </string>
+                <string name="renren" >人人网
+                </string>
+                <string name="share_to_mingdao" >分享到明道
+                </string>
+                <string name="line" >Line
+                </string>
+                <string name="instagram_client_inavailable" >Instagram版本过低或者没有安装，需要升级或安装Instagram才能使用！
+                </string>
+                <string name="flickr" >Flickr
+                </string>
+                <string name="pinterest" >Pinterest
+                </string>
+                <string name="twitter" >Twitter
+                </string>
+                <string name="email" >邮件
+                </string>
+                <string name="dropbox" >Dropbox
+                </string>
+                <string name="googleplus" >Google+
+                </string>
+                <string name="wechatfavorite" >微信收藏
+                </string>
+                <string name="qq_client_inavailable" >QQ 版本过低或者没有安装，需要升级或安装QQ才能使用！
+                </string>
+                <string name="yixin" >易信
+                </string>
+                <string name="share_to_qzone_default" >来自%s的分享
+                </string>
+                <string name="use_login_button" >请改用“登录”按钮
+                </string>
+                <string name="mingdao_share_content" >网页分享
+                </string>
+                <string name="sohusuishenkan" >搜狐随身看
+                </string>
+                <string name="shortmessage" >信息
+                </string>
+                <string name="sinaweibo" >新浪微博
+                </string>
+                <string name="wechat_client_inavailable" >目前您的微信版本过低或未安装微信，需要安装微信才能使用
+                </string>
+                <string name="weibo_oauth_regiseter" >应用授权
+                </string>
+                <string name="neteasemicroblog" >网易微博
+                </string>
+                <string name="share_to_qq" >分享到QQ
+                </string>
+                <string name="weibo_upload_content" >分享图片
+                </string>
+                <string name="website" >http://www.shareSDK.cn
+                </string>
+                <string name="mingdao" >明道
+                </string>
+                <string name="yixinmoments" >易信朋友圈
+                </string>
+            </file>
+            <file
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values\strings.xml"
                 qualifiers="" >
                 <string name="app_name" >迪士尼迷宫
                 </string>
             </file>
             <file
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\values\styles.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values\styles.xml"
                 qualifiers="" >
 
                 <style
@@ -152,19 +546,33 @@ true
                 </style>
             </file>
             <file
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\values\umipay_colors.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values\umipay_colors.xml"
                 qualifiers="" >
                 <color name="widget.border" >#d4d4d4
-                </color>
-                <color name="list.border" >#d4d4d4
-                </color>
-                <color name="f.g" >#aaa
                 </color>
                 <color name="list.line" >#e8e8e8
                 </color>
                 <color name="link" >#f78830
                 </color>
                 <color name="f.xs" >#b9b9b9
+                </color>
+                <color name="b.full" >#D5000000
+                </color>
+                <color name="f.w" >#fff
+                </color>
+                <color name="list.even" >#f7f7f7
+                </color>
+                <color name="transparent" >#00000000
+                </color>
+                <color name="highlight" >#f78830
+                </color>
+                <color name="g.gray" >#bfbfbf
+                </color>
+                <color name="strip" >#e8e8e8
+                </color>
+                <color name="f.g" >#aaa
+                </color>
+                <color name="list.border" >#d4d4d4
                 </color>
                 <color name="f.l" >#333333
                 </color>
@@ -178,27 +586,13 @@ true
                 </color>
                 <color name="f.s" >#999999
                 </color>
-                <color name="b.full" >#D5000000
-                </color>
                 <color name="g.green" >#74b626
                 </color>
-                <color name="f.w" >#fff
-                </color>
                 <color name="bg" >#fafafa
-                </color>
-                <color name="list.even" >#f7f7f7
-                </color>
-                <color name="highlight" >#f78830
-                </color>
-                <color name="transparent" >#00000000
                 </color>
                 <color name="umipay_oauth_textcolor_pressed" >#fff
                 </color>
                 <color name="umipay_oauth_textcolor_normal" >#dedede
-                </color>
-                <color name="g.gray" >#bfbfbf
-                </color>
-                <color name="strip" >#e8e8e8
                 </color>
                 <color name="list.light" >#fff9c9
                 </color>
@@ -206,7 +600,7 @@ true
                 </color>
             </file>
             <file
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\values\umipay_strings.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values\umipay_strings.xml"
                 qualifiers="" >
                 <string name="umipay_base_loading" >"网络正在通讯中，请稍等"
                 </string>
@@ -214,7 +608,7 @@ true
                 </string>
             </file>
             <file
-                path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\res\values\umipay_styles.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values\umipay_styles.xml"
                 qualifiers="" >
 
                 <style
@@ -1294,12 +1688,146 @@ horizontal
                     </item>
                 </style>
             </file>
+            <file
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values-en\oks_strings.xml"
+                qualifiers="en" >
+                <string name="refreshing" >Refreshing…
+                </string>
+                <string name="share_to" >Share to 
+                </string>
+                <string name="release_to_refresh" >Release to refresh
+                </string>
+                <string name="share_canceled" >Operation canceled
+                </string>
+                <string name="shake2share" >Shake your phone!
+                </string>
+                <string name="select_one_plat_at_least" >Please select a target platform
+                </string>
+                <string name="cancel" >Cancel
+                </string>
+                <string name="share_failed" >Operation failed
+                </string>
+                <string name="sharing" >Sharing operation is working in the background…
+                </string>
+                <string name="pull_to_refresh" >Pull down to refresh
+                </string>
+                <string name="multi_share" >Photo Sharing
+                </string>
+                <string name="share_completed" >Operation succeeded
+                </string>
+                <string name="share" >Share
+                </string>
+                <string name="finish" >Finish
+                </string>
+                <string name="list_friends" >Friends on %s
+                </string>
+            </file>
+            <file
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values-en\ssdk_strings.xml"
+                qualifiers="en" >
+                <string name="flickr" >Flickr
+                </string>
+                <string name="share_to_mingdao" >Share To Mingdao
+                </string>
+                <string name="youdao" >Youdao
+                </string>
+                <string name="email" >Email
+                </string>
+                <string name="linkedin" >Linked in
+                </string>
+                <string name="neteasemicroblog" >Netease Microblog
+                </string>
+                <string name="instagram" >Instagram
+                </string>
+                <string name="qq" >QQ
+                </string>
+                <string name="foursquare" >FourSquare
+                </string>
+                <string name="vkontakte" >VK
+                </string>
+                <string name="weibo_oauth_regiseter" >Authorization
+                </string>
+                <string name="website" >http://www.shareSDK.cn
+                </string>
+                <string name="sohumicroblog" >Sohu Microblog
+                </string>
+                <string name="share_to_qq" >Share To QQ
+                </string>
+                <string name="yixin" >Yixin
+                </string>
+                <string name="kaixin" >Kaixin
+                </string>
+                <string name="qzone" >QZone
+                </string>
+                <string name="yixinmoments" >Yixin Moments
+                </string>
+                <string name="mingdao_share_content" >Share webpage
+                </string>
+                <string name="googleplus" >Google+
+                </string>
+                <string name="line_client_inavailable" >Line client not exists or the version is too low
+                </string>
+                <string name="weibo_upload_content" >分享图片
+                </string>
+                <string name="facebook" >Facebook
+                </string>
+                <string name="mingdao" >Mingdao
+                </string>
+                <string name="pinterest" >Pinterest
+                </string>
+                <string name="instagram_client_inavailable" >Instagram client not exists or the version is too low
+                </string>
+                <string name="share_to_qzone_default" >Shared from %s
+                </string>
+                <string name="line" >Line
+                </string>
+                <string name="renren" >Renren
+                </string>
+                <string name="share_to_qzone" >Share To QZone
+                </string>
+                <string name="pinterest_client_inavailable" >Pinterest client not exists or the version is too low
+                </string>
+                <string name="wechat_client_inavailable" >Wechat client not exists or the version is too low
+                </string>
+                <string name="qq_client_inavailable" >Mobile QQ client not exists or the version is too low
+                </string>
+                <string name="twitter" >Twitter
+                </string>
+                <string name="shortmessage" >Short Message
+                </string>
+                <string name="sohusuishenkan" >Sohu Suishenkan
+                </string>
+                <string name="tencentweibo" >Tencent Weibo
+                </string>
+                <string name="google_plus_client_inavailable" >Google+ client not exists or the version is too low
+                </string>
+                <string name="dropbox" >Dropbox
+                </string>
+                <string name="yixin_client_inavailable" >Yixin client not exists or the version is too low
+                </string>
+                <string name="tumblr" >Tumblr
+                </string>
+                <string name="wechat" >Wechat
+                </string>
+                <string name="wechatmoments" >Wechat Moments
+                </string>
+                <string name="sinaweibo" >Sina Weibo
+                </string>
+                <string name="evernote" >Evernote
+                </string>
+                <string name="douban" >Douban
+                </string>
+                <string name="wechatfavorite" >Wechat Favorite
+                </string>
+                <string name="use_login_button" >use login button instead
+                </string>
+            </file>
         </source>
-        <source path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\generated\res\rs\debug" />
-        <source path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\generated\res\generated\debug" />
+        <source path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\generated\res\rs\debug" />
+        <source path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\generated\res\generated\debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\src\debug\res" />
+        <source path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\src\debug\res" />
     </dataSet>
 
 </merger>

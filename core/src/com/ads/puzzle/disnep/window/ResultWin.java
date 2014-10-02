@@ -32,9 +32,6 @@ import java.util.concurrent.TimeUnit;
  */
 public class ResultWin extends BaseWin {
     private GameScreen gameScreen;
-    private float w;
-    private float x;
-    private float y;
     private float space;
     private Image[] star_nulls;
     private Image[] stars;
@@ -57,14 +54,14 @@ public class ResultWin extends BaseWin {
         gameScreen = gs;
         create();
     }
-
+    float win_H;
     public void create() {
+        float btnSize = Assets.WIDTH / 6;
         gameScreen.getStage().addActor(layerBg);
-        w = Assets.WIDTH * 4 / 5;
-        x = (Assets.WIDTH - w) / 2;
-        y = (Assets.HEIGHT - w) / 2;
-        space = w / 5;
-        setBounds(x, y, w, w);
+        win_H = btnSize * 4;
+        float win_Y = (Assets.HEIGHT - win_H) / 2;
+        setBounds(0, win_Y, Assets.WIDTH, win_H);
+        space = Assets.WIDTH / 5;
         addButtons();
         addListeners();
         addStars();
@@ -80,13 +77,13 @@ public class ResultWin extends BaseWin {
 
     private void addButtons() {
         float btn_size = space;
-        float v = (w - btn_size) / 2;
         gateBtn = new ImageButton(new TextureRegionDrawable(Assets.gate), new TextureRegionDrawable(Assets.gate));
-        gateBtn.setBounds(v - btn_size, 0, btn_size, btn_size);
+        float y = win_H / 5;
+        gateBtn.setBounds(btn_size, y, btn_size, btn_size);
         refresh = new ImageButton(new TextureRegionDrawable(Assets.refresh), new TextureRegionDrawable(Assets.refresh));
-        refresh.setBounds(v, 0, btn_size, btn_size);
+        refresh.setBounds(2*btn_size, y, btn_size, btn_size);
         next = new ImageButton(new TextureRegionDrawable(Assets.next), new TextureRegionDrawable(Assets.next));
-        next.setBounds(v + btn_size, 0, btn_size, btn_size);
+        next.setBounds(3* btn_size, y, btn_size, btn_size);
     }
 
     private void addListeners() {
@@ -99,6 +96,9 @@ public class ResultWin extends BaseWin {
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                if (starNum > 0) {//时间已到,回关卡时,不能更新状态
+                    updateGateNum();
+                }
                 layerBg.remove();
                 gameScreen.getPuzzle().setScreen(new GateScreen(gameScreen.getPuzzle(), gameScreen.getLevel()));
                 super.touchUp(event, x, y, pointer, button);
@@ -113,6 +113,9 @@ public class ResultWin extends BaseWin {
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                if (starNum > 0) {//关卡已过,但想重新玩
+                    updateGateNum();
+                }
                 layerBg.remove();
                 gameScreen.refreshGame();
                 ResultWin.this.remove();
@@ -129,17 +132,8 @@ public class ResultWin extends BaseWin {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 layerBg.remove();
-                ((AreaController) group.findActor(IController.AREA_CTRL)).handler();
-                challengeCtrl.handler();
                 ((PieceController) group.findActor(IController.PIECE_CTRL)).handler();
-                int nextGateNum = challengeCtrl.getGateNum();
-                gameScreen.setGateNum(nextGateNum);
-                if (nextGateNum > Settings.unlockGateNum) {
-                    Settings.unlockGateNum = nextGateNum;
-                }
-                if (Answer.gateStars.size() <= nextGateNum) {
-                    Answer.gateStars.add(0);
-                }
+                int nextGateNum = updateGateNum();
                 ResultWin.this.remove();
                 gameScreen.return2init();
                 if (Answer.isLasterSmallGate(nextGateNum)) {
@@ -151,6 +145,20 @@ public class ResultWin extends BaseWin {
         });
     }
 
+    private int updateGateNum() {
+        ((AreaController) group.findActor(IController.AREA_CTRL)).handler();
+        challengeCtrl.handler();
+        int nextGateNum = challengeCtrl.getGateNum();
+        gameScreen.setGateNum(nextGateNum);
+        if (nextGateNum > Settings.unlockGateNum) {
+            Settings.unlockGateNum = nextGateNum;
+        }
+        if (Answer.gateStars.size() <= nextGateNum) {
+            Answer.gateStars.add(0);
+        }
+        return nextGateNum;
+    }
+
     private void initEffect() {
         effect = new ParticleEffect();
         effect.load(Gdx.files.internal("data/test.p"), Gdx.files.internal("data/"));
@@ -158,10 +166,10 @@ public class ResultWin extends BaseWin {
 
     private void addStars() {
         float starW = space;
-        float v = (w - starW) / 2;
+        float v = (Assets.WIDTH - starW) / 2;
         star_nulls = new Image[3];
         stars = new Image[3];
-        float y1 = w * 3 / 5;
+        float y1 = win_H/2;
         for (int i = 0; i < 3; i++) {
             star_nulls[i] = new Image(Assets.star_null);
             stars[i] = new Image(Assets.star);

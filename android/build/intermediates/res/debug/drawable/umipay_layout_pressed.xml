@@ -4,4 +4,4 @@
     <item android:state_pressed="false" android:drawable="@color/transparent" /><!-- default -->
     <item android:state_pressed="true" android:drawable="@drawable/umipay_default_btn_pressed_bg"/>
 </selector>
-<!-- From: file:/F:/ADWisdomHouse/Game/Puzzle/Disnep/android/res/drawable/umipay_layout_pressed.xml -->
+<!-- From: file:/F:/ADWisdomHouse/Game/Puzzle/DisneyPuzzle/android/res/drawable/umipay_layout_pressed.xml -->

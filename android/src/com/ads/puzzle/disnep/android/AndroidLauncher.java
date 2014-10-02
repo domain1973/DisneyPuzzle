@@ -1,8 +1,6 @@
 package com.ads.puzzle.disnep.android;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,16 +13,16 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.ads.puzzle.disnep.Answer;
-import com.ads.puzzle.disnep.PEvent;
 import com.ads.puzzle.disnep.Puzzle;
 import com.ads.puzzle.disnep.Settings;
-import com.ads.puzzle.disnep.screen.GameScreen;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.baidu.inf.iis.bcs.BaiduBCS;
+import com.baidu.inf.iis.bcs.auth.BCSCredentials;
+import com.baidu.inf.iis.bcs.request.GetObjectRequest;
 
 import net.umipay.android.GameParamInfo;
 import net.umipay.android.UmiPaySDKManager;
-import net.umipay.android.UmiPaymentInfo;
 import net.umipay.android.UmipayOrderInfo;
 import net.umipay.android.UmipaySDKStatusCode;
 import net.umipay.android.interfaces.InitCallbackListener;
@@ -36,126 +34,55 @@ import net.youmi.android.banner.AdView;
 import net.youmi.android.spot.SpotDialogListener;
 import net.youmi.android.spot.SpotManager;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AndroidLauncher extends AndroidApplication implements InitCallbackListener,
         OrderReceiverListener {
-    private Handler handler;
+    private final static String host = "bcs.duapp.com";
+    private final static String accessKey = "NESAXkQp7S1SIeqUncUnTCIl";
+    private final static String secretKey = "ZIQ2NE02RNWimzjyGI0Yh8NF4cAjouLf";
+    private final static String bucket = "ads-series";
+    private final static String path = "/mnt/sdcard/";
+
+    private String adPngStr = "/ad.png";
+    private File adPng = new File(path + "ad.png");
+    private String adAtlasStr = "/ad.atlas";
+    private File adAtlas = new File(path + "ad.atlas");
+    private String urlStr = "/url.txt";
+    private File url = new File(path + "url.txt");
+
     private boolean initFail;
-    private String title = "您好,我是小智";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         // 创建libgdx视图
-        View gameView = initializeForView(new Puzzle(new PEvent() {
-
-            @Override
-            public void pay() {
-                buyStar();
-            }
-
-            @Override
-            public void exit() {
-                handler.post(new Runnable() {
-                    public void run() {
-                        new AlertDialog.Builder(AndroidLauncher.this).setTitle(title).setMessage("确定要退出游戏吗?")
-                       .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                save();
-                                AndroidLauncher.this.exit();
-                            }
-                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).setNeutralButton("爱迪出品", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).setIcon(R.drawable.xiaozi).create().show();
-                    }
-                });
-            }
-
-            @Override
-            public void sos(final GameScreen gs) {
-                handler.post(new Runnable() {
-                    public void run() {
-                        new AlertDialog.Builder(AndroidLauncher.this).setTitle(title).setMessage("您还有" + Settings.helpNum + "次机会,需要帮助吗?")
-                       .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Settings.helpNum = Settings.helpNum - 1;
-                                gs.useSos();
-                            }
-                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).setIcon(R.drawable.xiaozi).create().show();
-                    }
-                });
-            }
-
-            @Override
-            public void invalidateSos() {
-                handler.post(new Runnable() {
-                    public void run() {
-                        new AlertDialog.Builder(AndroidLauncher.this).setTitle(title).setMessage("智慧星不够,点击分享可以获取智慧星哦!?")
-                                .setPositiveButton("关闭", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                    }
-                                }).setNeutralButton("分享", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).setNegativeButton("购买智慧星", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                buyStar();
-                            }
-                        }).setIcon(R.drawable.xiaozi).create().show();
-                    }
-                });
-            }
-
-            @Override
-            public void resetGame() {
-                handler.post(new Runnable() {
-                    public void run() {
-                        new AlertDialog.Builder(AndroidLauncher.this).setTitle(title).setMessage("是否确定重置您的进度?").setPositiveButton("是", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Settings.unlockGateNum = 0;
-                                Settings.helpNum = 3;
-                                Answer.gateStars.clear();
-                                Answer.gateStars.add(0);
-                                save();
-                            }
-                        }).setNegativeButton("否", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).setIcon(R.drawable.xiaozi).create().show();
-                    }
-                });
-            }
-
-            @Override
-            public void spotAM() {
-                spot();
-            }
-        }), config);
+        View gameView = initializeForView(new Puzzle(new PEventImpl(AndroidLauncher.this)), config);
         // 创建布局
         RelativeLayout layout = new RelativeLayout(this);
         // 添加libgdx视图
         layout.addView(gameView);
         setContentView(layout);
+
+        loadGameConfig();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                initBucket();
+            }
+        }).start();
+        if (Settings.adManager) {
+            addAdManager();
+        }
+        AdManager.getInstance(getContext()).setUserDataCollect(true);
+        initSDK();
+        initPayProcessListener();
+    }
+
+    private void addAdManager() {
         //banner广告
         AdManager.getInstance(this).init("123fc859610f597d", "13be68a226b9f94c", false);
         // 实例化LayoutParams(重要)
@@ -166,12 +93,7 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
         layoutParams.gravity = Gravity.BOTTOM | Gravity.RIGHT; // 这里示例为右下角
         // 调用Activity的addContentView函数
         addContentView(new AdView(this, AdSize.FIT_SCREEN), layoutParams);
-        handler = new Handler();
-        initSDK();
-        initPayProcessListener();
-
         spot();
-        load();
     }
 
     private void spot() {
@@ -191,7 +113,7 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
                     }
 
                 }
-        ); // //
+        );
     }
 
     /**
@@ -202,15 +124,12 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
         GameParamInfo gameParamInfo = new GameParamInfo();
         //您的应用的AppId
         gameParamInfo.setAppId("123fc859610f597d");
-        //您的应用的AppSecret
+        //您的应用的AppSecret123fc859610f597d
         gameParamInfo.setAppSecret("13be68a226b9f94c");
-
         //false 订单充值成功后是使用服务器通知 true 订单充值成功后使用客户端回调
         gameParamInfo.setSDKCallBack(true);
-
         //调用sdk初始化接口
         UmiPaySDKManager.initSDK(this, gameParamInfo, this, this);
-
     }
 
     /**
@@ -224,12 +143,15 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
                 switch (code) {
                     case UmipaySDKStatusCode.PAY_PROCESS_SUCCESS:
                         //充值完成，不等于充值成功，实际充值结果以订单回调接口为准
-                        Toast.makeText(getApplicationContext(), "充值完成！请耐心等候充值结果",
+                        Toast.makeText(getApplicationContext(), "购买完成！请耐心等候充值结果",
                                 Toast.LENGTH_SHORT).show();
+                        Settings.adManager = true;
+                        Settings.helpNum = Settings.helpNum + 15;
                         break;
                     case UmipaySDKStatusCode.PAY_PROCESS_FAIL:
-                        Toast.makeText(getApplicationContext(), "取消充值！",
+                        Toast.makeText(getApplicationContext(), "取消购买！",
                                 Toast.LENGTH_SHORT).show();
+                        Settings.adManager = false;
                         break;
                 }
             }
@@ -240,6 +162,9 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
     public void onBackPressed() {
     }
 
+    public boolean isNetwork() {
+        return initFail;
+    }
 
     /**
      * 初始化回调接口
@@ -317,35 +242,7 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
         return doneOrderList;   //将已经处理过的订单返回给sdk，下次服务器不再返回这些订单
     }
 
-    public void buyStar() {
-        if (initFail) {
-            // 网络错误
-            // Toast.makeText(AndroidLauncher.this, "网络连接错误", Toast.LENGTH_SHORT).show();
-            handler.post(new Runnable() {
-                public void run() {
-                    new AlertDialog.Builder(AndroidLauncher.this).setTitle(title).setMessage("连接不到网络,请检查哦!").setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            return;
-                        }
-                    }).setIcon(R.drawable.xiaozi).create().show();
-                }
-            });
-        } else {
-            //设置充值信息
-            UmiPaymentInfo paymentInfo = new UmiPaymentInfo();
-            //业务类型，SERVICE_TYPE_QUOTA(固定额度模式，充值金额在支付页面不可修改)，SERVICE_TYPE_RATE(汇率模式，充值金额在支付页面可修改）
-            paymentInfo.setServiceType(UmiPaymentInfo.SERVICE_TYPE_QUOTA);
-            //定额支付金额，单位RMB
-            paymentInfo.setPayMoney(1);
-            //订单描述
-            paymentInfo.setDesc("10颗智慧星");
-            //调用支付接口
-            UmiPaySDKManager.showPayView(this, paymentInfo);
-        }
-    }
-
-    private void load() {
+    private void loadGameConfig() {
         SharedPreferences sharedata = getSharedPreferences("data", Context.MODE_PRIVATE);
         Settings.musicEnabled = sharedata.getBoolean("music", true);
         Settings.soundEnabled = sharedata.getBoolean("sound", true);
@@ -357,20 +254,24 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
                 Answer.gateStars.add(Integer.parseInt(starNum));
             }
         }
+        Settings.adManager = sharedata.getBoolean("adManager", true);
     }
 
-    private void save() {
-        SharedPreferences.Editor sharedata = getSharedPreferences("data", 0).edit();
-        sharedata.putBoolean("music", Settings.musicEnabled);
-        sharedata.putBoolean("sound", Settings.soundEnabled);
-        sharedata.putInt("passNum", Settings.unlockGateNum);
-        sharedata.putInt("helpNum", Settings.helpNum);
-        StringBuffer sb = new StringBuffer();
-        for (Integer starNum : Answer.gateStars) {
-            sb.append(starNum).append(",");
+    private void initBucket() {
+        try {
+            BCSCredentials credentials = new BCSCredentials(accessKey, secretKey);
+            BaiduBCS baiduBCS = new BaiduBCS(credentials, host);
+            baiduBCS.setDefaultEncoding("UTF-8"); // Default UTF-8
+            getObjectWithDestFile(baiduBCS, adAtlasStr, adAtlas);
+            getObjectWithDestFile(baiduBCS, urlStr, url);
+            getObjectWithDestFile(baiduBCS, adPngStr, adPng);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        sharedata.putString("starNum", sb.substring(0, sb.length() - 1));
-        sharedata.commit();
     }
 
+    private void getObjectWithDestFile(BaiduBCS baiduBCS, String name, File file) {
+        GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, name);
+        baiduBCS.getObject(getObjectRequest, file);
+    }
 }

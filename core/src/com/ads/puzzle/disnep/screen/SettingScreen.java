@@ -76,7 +76,6 @@ public class SettingScreen extends OtherScreen {
                 super.touchUp(event, x, y, pointer, button);
             }
         });
-        getStarLabel().setText("总计:" + getStarNum());
         addActor(musicBtn);
         addActor(soundBtn);
         addActor(resetGameBtn);

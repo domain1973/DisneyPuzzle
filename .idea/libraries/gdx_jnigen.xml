@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="gdx-jnigen">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/gdx-jnigen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/android/libs/gdx-jnigen.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

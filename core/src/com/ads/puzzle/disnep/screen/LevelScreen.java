@@ -64,7 +64,6 @@ public class LevelScreen extends OtherScreen {
             levelListener.setPosition(initPosition);
         }
         multiplexer.addProcessor(new LevelDetector(getStage(), levelListener));
-        getStarLabel().setText("总计:" + getStarNum());
         Gdx.input.setInputProcessor(multiplexer);
     }
 

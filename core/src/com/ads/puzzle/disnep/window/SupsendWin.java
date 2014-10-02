@@ -17,9 +17,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Administrator on 2014/7/20.
@@ -213,16 +210,5 @@ public class SupsendWin extends BaseWin {
         addActor(share);
         addActor(buy);
         addActor(continues);
-        invokSpot();
-    }
-
-    private void invokSpot() {
-        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-        Runnable runner = new Runnable() {
-            public void run() {
-                puzzle.getPEvent().spotAM();
-            }
-        };
-        executor.schedule(runner, 15000, TimeUnit.MILLISECONDS);
     }
 }

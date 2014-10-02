@@ -34,7 +34,7 @@ android {
                 proguardFiles 'proguard-project.txt'
                 signingConfig signingConfigs.release
             }
-            debug{
+            debug {
                 runProguard false
                 proguardFiles 'proguard-project.txt'
             }
@@ -125,9 +125,18 @@ idea {
     }
 }
 dependencies {
-    compile files('../libs/UPPayPluginEx.jar')
-    compile files('../libs/YoumiSdk_v4.09_2014-06-16.jar')
-    compile files('../libs/UPPayAssistEx.jar')
-    compile files('../libs/umilocalpaysdk-V221.jar')
-    compile files('F:/ADWisdomHouse/Game/Puzzle/disnep/libs/gdx-jnigen.jar')
+    compile files('libs/UPPayPluginEx.jar')
+    compile files('libs/YoumiSdk_v4.09_2014-06-16.jar')
+    compile files('libs/UPPayAssistEx.jar')
+    compile files('libs/umilocalpaysdk-V221.jar')
+    compile files('libs/gdx-jnigen.jar')
+    compile files('libs/ShareSDK-Core-2.3.12.jar')
+    compile files('libs/ShareSDK-Wechat-2.3.12.jar')
+    compile files('libs/ShareSDK-Wechat-Core-2.3.12.jar')
+    compile files('libs/ShareSDK-Wechat-Favorite-2.3.12.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-2.3.12.jar')
+    compile files('libs/mframework.jar')
+    compile files('libs/android-support-v4.jar')
+    compile files('libs/bcs-sdk-java_1.4.5.jar')
+    compile files('libs/flexjson-2.1.jar')
 }

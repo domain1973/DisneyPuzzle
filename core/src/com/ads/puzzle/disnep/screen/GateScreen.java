@@ -34,7 +34,10 @@ public class GateScreen extends OtherScreen {
                 return true;
             }
         });
-        getStarLabel().setText("   " + starNum + "/36");
+        String str = starNum + "/36";
+        float w = getOtherFont().getBounds(str).width;
+        getStarLabel().setBounds((Assets.WIDTH - Assets.TOPBAR_HEIGHT - w), getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
+        getStarLabel().setText(str);
     }
 
     private void buildGateImage() {

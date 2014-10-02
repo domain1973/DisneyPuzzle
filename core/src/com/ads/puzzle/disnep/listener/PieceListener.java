@@ -42,6 +42,7 @@ public class PieceListener extends GestureDetector.GestureAdapter {
 
     @Override
     public boolean touchDown(float x, float y, int pointer, int button) {
+        downActor = null;
         stage.getCamera().unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0));
         for (int i = 0; i < 4; i++) {
             Piece piece = (Piece) pieceActors.get(i);

@@ -54,6 +54,5 @@ public class ReadmeScreen extends OtherScreen {
                 super.touchUp(event, x, y, pointer, button);
             }
         });
-        getStarLabel().setText("总计:" + getStarNum());
     }
 }

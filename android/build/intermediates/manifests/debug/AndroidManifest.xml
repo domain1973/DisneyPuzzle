@@ -26,6 +26,9 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/GdxTheme" >
+        <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
         <activity
             android:name="com.ads.puzzle.disnep.android.AndroidLauncher"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
@@ -73,6 +76,27 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.UPPay" >
         </activity>
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ads.puzzle.disnep.android.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <service
             android:name="net.umipay.android.poll.Push_Poll_service"

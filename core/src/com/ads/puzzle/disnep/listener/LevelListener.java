@@ -50,8 +50,7 @@ public class LevelListener extends GestureDetector.GestureAdapter {
         stage.getCamera().unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0)); // 坐标转化
         int level = (int)Math.abs(position/480);
         int tLevel = Settings.unlockGateNum / Answer.GATE_MAX;
-        if (level <= tLevel)
-        {
+        if (level <= tLevel) {
             float v = Assets.WIDTH - 2 * Assets.LEVEL_IMAGE_OFF_SIZE;
             Rectangle bounds = new Rectangle(Assets.LEVEL_IMAGE_OFF_SIZE, (Assets.HEIGHT - Assets.WIDTH) / 2 + Assets.LEVEL_IMAGE_OFF_SIZE, v, v);
             if (bounds.contains(touchPoint.x, touchPoint.y)) {

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="umilocalpaysdk-V221">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/umilocalpaysdk-V221.jar!/" />
+      <root url="jar://$PROJECT_DIR$/android/libs/umilocalpaysdk-V221.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

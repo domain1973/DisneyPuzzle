@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="UPPayPluginEx">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/UPPayPluginEx.jar!/" />
+      <root url="jar://$PROJECT_DIR$/android/libs/UPPayPluginEx.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
