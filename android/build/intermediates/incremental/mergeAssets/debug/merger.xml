@@ -4,8 +4,17 @@
     <dataSet config="main" >
         <source path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets" >
             <file
+                name="data/btn.wav"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\data\btn.wav" />
+            <file
+                name="data/musicbg.mp3"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\data\musicbg.mp3" />
+            <file
                 name="data/particle-star.png"
                 path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\data\particle-star.png" />
+            <file
+                name="data/star.mp3"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\data\star.mp3" />
             <file
                 name="data/test.p"
                 path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\data\test.p" />

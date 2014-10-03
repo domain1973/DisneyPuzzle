@@ -77,6 +77,7 @@ public class SupsendWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -90,6 +91,7 @@ public class SupsendWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -97,6 +99,7 @@ public class SupsendWin extends BaseWin {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 addActor(noMusic);
                 Settings.musicEnabled = false;
+                Assets.music1.play();
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -104,6 +107,7 @@ public class SupsendWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -111,6 +115,7 @@ public class SupsendWin extends BaseWin {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 noMusic.remove();
                 Settings.musicEnabled = true;
+                Assets.music1.stop();
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -118,6 +123,7 @@ public class SupsendWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -132,6 +138,7 @@ public class SupsendWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -146,6 +153,7 @@ public class SupsendWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -159,6 +167,7 @@ public class SupsendWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -172,6 +181,7 @@ public class SupsendWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -185,6 +195,7 @@ public class SupsendWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 

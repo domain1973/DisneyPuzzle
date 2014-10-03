@@ -1822,6 +1822,20 @@ horizontal
                 <string name="use_login_button" >use login button instead
                 </string>
             </file>
+            <file
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values-en\strings.xml"
+                qualifiers="en" >
+                <string name="app_name" >Disney Puzzle
+                </string>
+            </file>
+            <file
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\values-en\umipay_strings.xml"
+                qualifiers="en" >
+                <string name="umipay_agm" >"I agree to the protocl"
+                </string>
+                <string name="umipay_base_loading" >"The network busy，Please waiting"
+                </string>
+            </file>
         </source>
         <source path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\generated\res\rs\debug" />
         <source path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\generated\res\generated\debug" />

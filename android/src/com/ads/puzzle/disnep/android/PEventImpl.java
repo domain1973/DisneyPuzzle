@@ -4,6 +4,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Handler;
 import android.util.Log;
@@ -25,6 +28,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
@@ -73,23 +77,25 @@ public class PEventImpl extends PEvent {
     public void exit(final MainScreen mainScreen) {
         handler.post(new Runnable() {
             public void run() {
-                new AlertDialog.Builder(launcher).setTitle(title).setMessage("确定要退出游戏吗?")
-                        .setNeutralButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                save();
-                                launcher.exit();
-                            }
-                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                }).setPositiveButton("爱迪出品", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        mainScreen.changeMoreGameScreen();
-                    }
-                }).setIcon(R.drawable.xiaozi).create().show();
+            new AlertDialog.Builder(launcher).setTitle(title).setMessage("确定要退出游戏吗?")
+                    .setNeutralButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            save();
+                            launcher.exit();
+                        }
+                    }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            }).setPositiveButton("爱迪出品", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Uri uri = Uri.parse("http://ads360.duapp.com/House");
+                    Intent it = new Intent(Intent.ACTION_VIEW, uri);
+                    launcher.startActivity(it);
+                }
+            }).setIcon(R.drawable.xiaozi).create().show();
             }
         });
     }
@@ -113,18 +119,18 @@ public class PEventImpl extends PEvent {
     public void sos(final GameScreen gs) {
         handler.post(new Runnable() {
             public void run() {
-                new AlertDialog.Builder(launcher).setTitle(title).setMessage("您还有" + Settings.helpNum + "次机会,需要帮助吗?")
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Settings.helpNum = Settings.helpNum - 1;
-                                gs.useSos();
-                            }
-                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                }).setIcon(R.drawable.xiaozi).create().show();
+            new AlertDialog.Builder(launcher).setTitle(title).setMessage("您还有" + Settings.helpNum + "次机会,需要帮助吗?")
+                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Settings.helpNum = Settings.helpNum - 1;
+                            gs.useSos();
+                        }
+                    }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            }).setIcon(R.drawable.xiaozi).create().show();
             }
         });
     }
@@ -186,24 +192,46 @@ public class PEventImpl extends PEvent {
     }
 
     private void showShare() {
+        initImagePath();
         handler.post(new Runnable() {
             public void run() {
                 ShareSDK.initSDK(launcher);
                 OnekeyShare oks = new OnekeyShare();
-                //关闭sso授权
-                oks.disableSSOWhenAuthorize();
-                // 分享时Notification的图标和文字
-                oks.setNotification(R.drawable.ic_launcher, launcher.getString(R.string.app_name));
-                // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
-                oks.setTitle(launcher.getString(R.string.share));
-                // text是分享文本，所有平台都需要这个字段
+                oks.setNotification(R.drawable.ic_launcher, launcher.getContext().getString(R.string.app_name));
+                oks.setTitle("有趣的迷宫");
                 oks.setText("很有趣的一款益智游戏,聪明人的游戏,快来加入吧!");
-                // url仅在微信（包括好友和朋友圈）中使用
-                oks.setUrl("http://bcs.duapp.com/ads-series/puzzle%2F%E8%BF%AA%E5%A3%AB%E5%B0%BC%E8%BF%B7%E5%AE%AB.apk");
-                // 启动分享GUI
-                oks.show(launcher);
+                oks.setImagePath(TEST_IMAGE);
+                oks.setUrl("http://ads360.duapp.com/Puzzle");
+                // 令编辑页面显示为Dialog模式
+                oks.setDialogMode();
+                // 在自动授权时可以禁用SSO方式
+                oks.disableSSOWhenAuthorize();
+                // 去除注释，则快捷分享的操作结果将通过OneKeyShareCallback回调
+		        oks.setCallback(new OneKeyShareCallback());
+                oks.show(launcher.getContext());
             }
         });
+    }
+
+    private String TEST_IMAGE;
+    private static final String FILE_NAME = "pic_beauty_on_sofa.jpg";
+    private void initImagePath() {
+        try {
+            String cachePath = cn.sharesdk.framework.utils.R.getCachePath(launcher, null);
+            TEST_IMAGE = cachePath + FILE_NAME;
+            File file = new File(TEST_IMAGE);
+            if (!file.exists()) {
+                file.createNewFile();
+                Bitmap pic = BitmapFactory.decodeResource(launcher.getResources(), R.drawable.ic_launcher);
+                FileOutputStream fos = new FileOutputStream(file);
+                pic.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                fos.flush();
+                fos.close();
+            }
+        } catch(Throwable t) {
+            t.printStackTrace();
+            TEST_IMAGE = null;
+        }
     }
 
     protected File downLoadFile(String httpUrl) {

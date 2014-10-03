@@ -193,10 +193,14 @@ public class GameScreen extends BaseScreen {
     }
 
     private void changeStar() {
+        Assets.playSound(Assets.starSound);
         executStarCount = Executors.newSingleThreadScheduledExecutor();
         executStarCount.scheduleAtFixedRate( new Runnable() {
             public void run() {
                 areaId++;
+                if (areaId < 3) {
+                    Assets.playSound(Assets.starSound);
+                }
             }
         }, 1000, 2000, TimeUnit.MILLISECONDS);
     }

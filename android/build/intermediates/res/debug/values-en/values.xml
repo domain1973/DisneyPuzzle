@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- From: file:/F:/ADWisdomHouse/Game/Puzzle/DisneyPuzzle/android/res/values-en/strings.xml -->
+    <eat-comment />
+
+    <string name="app_name">Disney Puzzle</string>
     <!-- From: file:/F:/ADWisdomHouse/Game/Puzzle/DisneyPuzzle/android/res/values-en/oks_strings.xml -->
     <eat-comment />
 
@@ -99,6 +103,14 @@
     <string name="tencentweibo">Tencent Weibo</string>
     <string name="tumblr">Tumblr</string>
     <string name="twitter">Twitter</string>
+    <!-- From: file:/F:/ADWisdomHouse/Game/Puzzle/DisneyPuzzle/android/res/values-en/umipay_strings.xml -->
+    <eat-comment />
+
+    <string name="umipay_agm">"I agree to the protocl"</string>
+    <string name="umipay_base_loading">"The network busy，Please waiting"</string>
+    <!-- From: file:/F:/ADWisdomHouse/Game/Puzzle/DisneyPuzzle/android/res/values-en/ssdk_strings.xml -->
+    <eat-comment />
+
     <string name="use_login_button">use login button instead</string>
     <string name="vkontakte">VK</string>
     <string name="website">http://www.shareSDK.cn</string>

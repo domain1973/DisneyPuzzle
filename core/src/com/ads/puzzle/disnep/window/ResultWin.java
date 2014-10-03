@@ -78,7 +78,7 @@ public class ResultWin extends BaseWin {
     private void addButtons() {
         float btn_size = space;
         gateBtn = new ImageButton(new TextureRegionDrawable(Assets.gate), new TextureRegionDrawable(Assets.gate));
-        float y = win_H / 5;
+        float y = win_H / 6;
         gateBtn.setBounds(btn_size, y, btn_size, btn_size);
         refresh = new ImageButton(new TextureRegionDrawable(Assets.refresh), new TextureRegionDrawable(Assets.refresh));
         refresh.setBounds(2*btn_size, y, btn_size, btn_size);
@@ -181,6 +181,7 @@ public class ResultWin extends BaseWin {
         }
     }
 
+    private boolean sound = false;
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
@@ -198,6 +199,7 @@ public class ResultWin extends BaseWin {
                     addActor(star);
                 } else {
                     end = true;
+                    executStarCount.shutdown();
                     Gdx.input.setInputProcessor(gameScreen.getStage());
                 }
             }
@@ -205,10 +207,14 @@ public class ResultWin extends BaseWin {
     }
 
     private void changeStar() {
+        Assets.playSound(Assets.starSound);
         executStarCount = Executors.newSingleThreadScheduledExecutor();
         executStarCount.scheduleAtFixedRate( new Runnable() {
             public void run() {
-                starIndex++; //
+                starIndex++;
+                if (starIndex < 3) {
+                    Assets.playSound(Assets.starSound);
+                }
             }
         }, 1000, 1000, TimeUnit.MILLISECONDS);
     }

@@ -99,6 +99,7 @@ public class Assets {
         createLevelSprite(atlas);
         creteMagicCubes(atlas);
         loadAd();
+        loadMusic();
     }
 
     private static void initConstants() {
@@ -238,16 +239,17 @@ public class Assets {
     }
 
     public static Music music1;
-    public static Sound jumpSound;
+    public static Sound btnSound;
+    public static Sound starSound;
 
-    private void loadMusic() {
-        music1 = Gdx.audio.newMusic(Gdx.files.internal("data/music.mp3"));    //加载背景音乐
+    private static void loadMusic() {
+        music1 = Gdx.audio.newMusic(Gdx.files.internal("data/musicbg.mp3"));    //加载背景音乐
         music1.setLooping(true);  //设置背景音乐循环播放
         music1.setVolume(0.5f);   //设置音量
         if (Settings.soundEnabled)
             music1.play();        //播放背景音乐
 
-        jumpSound = Gdx.audio.newSound(Gdx.files.internal("data/jump.ogg")); //加载跳跃时候的音效
+        btnSound = Gdx.audio.newSound(Gdx.files.internal("data/btn.wav")); //加载跳跃时候的音效
+        starSound = Gdx.audio.newSound(Gdx.files.internal("data/star.mp3"));
     }
-
 }

@@ -17,8 +17,8 @@ public class ReadmeScreen extends OtherScreen {
     private ReadmeScreen(Puzzle game) {
         super(game);
         readmeImage = new Image(Assets.readme);
-        float imageSize = Assets.WIDTH *20/ 21;
-        readmeImage.setBounds((Assets.WIDTH - imageSize)/2, (Assets.HEIGHT - imageSize)/2, imageSize, imageSize);
+        float imageW = Assets.WIDTH *20/ 21;
+        readmeImage.setBounds((Assets.WIDTH - imageW)/2, Assets.TOPBAR_HEIGHT, imageW, imageW*1.6f);
     }
 
     public ReadmeScreen(Puzzle game, MainScreen ms) {

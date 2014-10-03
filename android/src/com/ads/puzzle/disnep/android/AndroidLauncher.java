@@ -74,10 +74,11 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
                 initBucket();
             }
         }).start();
+        AdManager.getInstance(getContext()).setUserDataCollect(true);
         if (Settings.adManager) {
             addAdManager();
+            spot();
         }
-        AdManager.getInstance(getContext()).setUserDataCollect(true);
         initSDK();
         initPayProcessListener();
     }
@@ -93,7 +94,6 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
         layoutParams.gravity = Gravity.BOTTOM | Gravity.RIGHT; // 这里示例为右下角
         // 调用Activity的addContentView函数
         addContentView(new AdView(this, AdSize.FIT_SCREEN), layoutParams);
-        spot();
     }
 
     private void spot() {
