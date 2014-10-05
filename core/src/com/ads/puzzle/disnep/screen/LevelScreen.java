@@ -81,6 +81,7 @@ public class LevelScreen extends OtherScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 if (level != 0) {
                     level--;
                     levelListener.setPosition(-Assets.WIDTH * level);
@@ -93,6 +94,7 @@ public class LevelScreen extends OtherScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 if (level != Assets.LEVEL_MAX) {
                     level++;
                     levelListener.setPosition(-Assets.WIDTH * level);
@@ -105,6 +107,7 @@ public class LevelScreen extends OtherScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 

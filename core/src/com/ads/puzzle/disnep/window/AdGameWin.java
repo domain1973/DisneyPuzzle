@@ -1,7 +1,7 @@
 package com.ads.puzzle.disnep.window;
 
 import com.ads.puzzle.disnep.Assets;
-import com.ads.puzzle.disnep.screen.MoreGameScreen;
+import com.ads.puzzle.disnep.screen.AdGameScreen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -15,10 +15,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
  * Created by Administrator on 2014/9/30.
  */
 public class AdGameWin extends BaseWin {
-    private MoreGameScreen gameScreen;
+    private AdGameScreen gameScreen;
     private String apkUrl;
 
-    public AdGameWin(BitmapFont ft, MoreGameScreen gs, Image readme, String url) {
+    public AdGameWin(BitmapFont ft, AdGameScreen gs, Image readme, String url) {
         super("", new Window.WindowStyle(ft, Color.WHITE, readme.getDrawable()));
         gameScreen = gs;
         apkUrl = url;
@@ -38,11 +38,14 @@ public class AdGameWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                layerBg.remove();
+                AdGameWin.this.remove();
                 gameScreen.getPuzzle().getPEvent().install(apkUrl);
                 super.touchUp(event, x, y, pointer, button);
             }
@@ -56,13 +59,14 @@ public class AdGameWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
-                layerBg.remove();
-                AdGameWin.this.remove();
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                layerBg.remove();
+                AdGameWin.this.remove();
                 super.touchUp(event, x, y, pointer, button);
             }
         });

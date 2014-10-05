@@ -30,5 +30,6 @@
 -keep class com.baidu.inf.iis.bcs.** { *; }
 -keep class cn.sharesdk.** { *; }
 -keep class flexjson.** { *; }
+-keep class cn.sharesdk.onekeyshare.** { *; }
 -keep class com.tencent.mm.sdk.modelmsg.WXMediaMessage { *;}
 -keep class com.tencent.mm.sdk.modelmsg.** implements com.tencent.mm.sdk.modelmsg.WXMediaMessage$IMediaObject {*;}

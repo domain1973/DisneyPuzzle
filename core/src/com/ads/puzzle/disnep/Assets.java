@@ -31,6 +31,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Assets {
+    public static Music musicbg;
+    public static Sound btnSound;
+    public static Sound starSound;
+
     public static TextureRegion gameBg;
     public static TextureRegion theme;
     public static TextureRegion winBg;
@@ -122,7 +126,7 @@ public class Assets {
         areaBg = atlas.findRegion("area");
         resultBg = atlas.findRegion("resultbg");
         readme = atlas.findRegion("readme");
-        aboutInfo = atlas.findRegion("about_small");
+        aboutInfo = atlas.findRegion("aboutinfo");
 
         suspend = atlas.findRegion("suspend");
         share = atlas.findRegion("share");
@@ -238,16 +242,12 @@ public class Assets {
         if (Settings.soundEnabled) sound.play(1);
     }
 
-    public static Music music1;
-    public static Sound btnSound;
-    public static Sound starSound;
-
     private static void loadMusic() {
-        music1 = Gdx.audio.newMusic(Gdx.files.internal("data/musicbg.mp3"));    //加载背景音乐
-        music1.setLooping(true);  //设置背景音乐循环播放
-        music1.setVolume(0.5f);   //设置音量
+        musicbg = Gdx.audio.newMusic(Gdx.files.internal("data/musicbg.mp3"));    //加载背景音乐
+        musicbg.setLooping(true);  //设置背景音乐循环播放
+        musicbg.setVolume(0.5f);   //设置音量
         if (Settings.soundEnabled)
-            music1.play();        //播放背景音乐
+            musicbg.play();        //播放背景音乐
 
         btnSound = Gdx.audio.newSound(Gdx.files.internal("data/btn.wav")); //加载跳跃时候的音效
         starSound = Gdx.audio.newSound(Gdx.files.internal("data/star.mp3"));

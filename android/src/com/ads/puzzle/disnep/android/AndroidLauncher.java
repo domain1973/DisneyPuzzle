@@ -40,6 +40,7 @@ import java.util.List;
 
 public class AndroidLauncher extends AndroidApplication implements InitCallbackListener,
         OrderReceiverListener {
+    public final static int BUYSTARNUM = 10;
     private final static String host = "bcs.duapp.com";
     private final static String accessKey = "NESAXkQp7S1SIeqUncUnTCIl";
     private final static String secretKey = "ZIQ2NE02RNWimzjyGI0Yh8NF4cAjouLf";
@@ -145,13 +146,12 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
                         //充值完成，不等于充值成功，实际充值结果以订单回调接口为准
                         Toast.makeText(getApplicationContext(), "购买完成！请耐心等候充值结果",
                                 Toast.LENGTH_SHORT).show();
-                        Settings.adManager = true;
-                        Settings.helpNum = Settings.helpNum + 15;
+                        Settings.adManager = false;
+                        Settings.helpNum = Settings.helpNum + BUYSTARNUM;
                         break;
                     case UmipaySDKStatusCode.PAY_PROCESS_FAIL:
                         Toast.makeText(getApplicationContext(), "取消购买！",
                                 Toast.LENGTH_SHORT).show();
-                        Settings.adManager = false;
                         break;
                 }
             }
@@ -248,6 +248,7 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
         Settings.soundEnabled = sharedata.getBoolean("sound", true);
         Settings.unlockGateNum = sharedata.getInt("passNum", 0);
         Settings.helpNum = sharedata.getInt("helpNum", 3);
+        Answer.gateStars.clear();
         String[] split = sharedata.getString("starNum", "0").split("[,]");
         for (String starNum : split) {
             if (!"".equals(starNum)) {

@@ -21,8 +21,8 @@ public class Piece extends Image {
     }
 
     public void return2BeginArea() {
-        float x_off = Gdx.graphics.getWidth() / 2;
-        float y_off = Gdx.graphics.getHeight() - Gdx.graphics.getWidth() - Assets.TOPBAR_HEIGHT;
+        float x_off = Assets.WIDTH / 2;
+        float y_off = Assets.HEIGHT - Assets.WIDTH - Assets.TOPBAR_HEIGHT;
         float x = 0;
         float y = 0;
         float size = Assets.SMALL_PIECE_SIZE;

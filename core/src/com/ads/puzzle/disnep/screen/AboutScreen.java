@@ -11,7 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
  */
 public class AboutScreen extends OtherScreen {
     private Image aboutImage;
-    private GameScreen gameScreen;
+    private BaseScreen gameScreen;
 
     private AboutScreen(Puzzle game) {
         super(game);
@@ -19,7 +19,7 @@ public class AboutScreen extends OtherScreen {
         aboutImage.setPosition(0, (Assets.HEIGHT - aboutImage.getHeight())/2);
     }
 
-    public AboutScreen(Puzzle game, GameScreen gs) {
+    public AboutScreen(Puzzle game, BaseScreen gs) {
         this(game);
         gameScreen = gs;
     }
@@ -32,6 +32,7 @@ public class AboutScreen extends OtherScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 

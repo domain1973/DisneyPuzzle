@@ -91,6 +91,7 @@ public class ResultWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -108,13 +109,15 @@ public class ResultWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                if (starNum > 0) {//关卡已过,但想重新玩
-                    updateGateNum();
+                int t = challengeCtrl.getGateNum();
+                if (Answer.gateStars.size() > t) {//原则:重玩星星个数置成0
+                    Answer.gateStars.set(t, 0);
                 }
                 layerBg.remove();
                 gameScreen.refreshGame();
@@ -126,6 +129,7 @@ public class ResultWin extends BaseWin {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -181,7 +185,6 @@ public class ResultWin extends BaseWin {
         }
     }
 
-    private boolean sound = false;
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);

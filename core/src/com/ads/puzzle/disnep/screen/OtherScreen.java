@@ -39,6 +39,7 @@ public class OtherScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -54,12 +55,15 @@ public class OtherScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                getPuzzle().setScreen(new MoreGameScreen(getPuzzle(), OtherScreen.this));
+                if (getPuzzle().getPEvent().isNetworkEnable()) {
+                    getPuzzle().setScreen(new AdGameScreen(getPuzzle(), OtherScreen.this));
+                }
                 super.touchUp(event, x, y, pointer, button);
             }
         });

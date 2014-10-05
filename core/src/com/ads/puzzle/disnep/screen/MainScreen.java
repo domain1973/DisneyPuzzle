@@ -46,6 +46,7 @@ public class MainScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -59,6 +60,7 @@ public class MainScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -72,12 +74,13 @@ public class MainScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                puzzle.setScreen(new ReadmeScreen(puzzle, MainScreen.this));
+                puzzle.setScreen(new HelpScreen(puzzle, MainScreen.this));
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -85,6 +88,7 @@ public class MainScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -112,9 +116,4 @@ public class MainScreen extends BaseScreen {
         getOtherFont().dispose();
         getStage().dispose();
     }
-
-    public void changeMoreGameScreen() {
-        getPuzzle().setScreen(new MoreGameScreen(getPuzzle(), this));
-    }
-
 }

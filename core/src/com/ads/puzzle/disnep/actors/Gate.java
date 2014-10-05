@@ -1,5 +1,6 @@
 package com.ads.puzzle.disnep.actors;
 
+import com.ads.puzzle.disnep.Assets;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
@@ -15,11 +16,11 @@ public class Gate extends ImageButton {
         super(imageUp);
         this.id = id;
         this.gateNum = gateNum;
-        float gateBtnSize = Gdx.graphics.getWidth() / 5;
+        float gateBtnSize = Assets.WIDTH / 5;
         float gateBtnSpace = gateBtnSize / 5;
         float y_off = Gdx.graphics.getHeight() / 3;
         float hspace = y_off / 2;
-        setPosition((id % 4 + 1) * gateBtnSpace + id % 4 * gateBtnSize, Gdx.graphics.getHeight() - y_off - id / 4 * hspace);
+        setPosition((id % 4 + 1) * gateBtnSpace + id % 4 * gateBtnSize, Assets.HEIGHT - y_off - id / 4 * hspace);
     }
 
     public int getId() {

@@ -54,6 +54,7 @@ public class LevelListener extends GestureDetector.GestureAdapter {
             float v = Assets.WIDTH - 2 * Assets.LEVEL_IMAGE_OFF_SIZE;
             Rectangle bounds = new Rectangle(Assets.LEVEL_IMAGE_OFF_SIZE, (Assets.HEIGHT - Assets.WIDTH) / 2 + Assets.LEVEL_IMAGE_OFF_SIZE, v, v);
             if (bounds.contains(touchPoint.x, touchPoint.y)) {
+                Assets.playSound(Assets.btnSound);
                 puzzle.setScreen(new GateScreen(puzzle, level));
             }
         }

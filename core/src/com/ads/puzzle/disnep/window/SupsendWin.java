@@ -6,7 +6,7 @@ import com.ads.puzzle.disnep.Settings;
 import com.ads.puzzle.disnep.screen.AboutScreen;
 import com.ads.puzzle.disnep.screen.GameScreen;
 import com.ads.puzzle.disnep.screen.GateScreen;
-import com.ads.puzzle.disnep.screen.ReadmeScreen;
+import com.ads.puzzle.disnep.screen.HelpScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -99,7 +99,7 @@ public class SupsendWin extends BaseWin {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 addActor(noMusic);
                 Settings.musicEnabled = false;
-                Assets.music1.play();
+                Assets.musicbg.stop();
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -115,7 +115,7 @@ public class SupsendWin extends BaseWin {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 noMusic.remove();
                 Settings.musicEnabled = true;
-                Assets.music1.stop();
+                Assets.musicbg.play();
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -173,7 +173,7 @@ public class SupsendWin extends BaseWin {
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                puzzle.setScreen(new ReadmeScreen(puzzle, gameScreen));
+                puzzle.setScreen(new HelpScreen(puzzle, gameScreen));
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -208,10 +208,10 @@ public class SupsendWin extends BaseWin {
             }
         });
         addActor(music);
+        addActor(sound);
         if (!Settings.musicEnabled) {
             addActor(noMusic);
         }
-        addActor(sound);
         if (!Settings.soundEnabled) {
             addActor(noSound);
         }

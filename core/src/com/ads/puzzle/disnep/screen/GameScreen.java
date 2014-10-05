@@ -107,6 +107,7 @@ public class GameScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -128,12 +129,15 @@ public class GameScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                //TODO
                 Settings.helpNum++;
+                //getPuzzle().getPEvent().share();
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -145,6 +149,7 @@ public class GameScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
                 return true;
             }
 
@@ -162,8 +167,14 @@ public class GameScreen extends BaseScreen {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
                                      int pointer, int button) {
-                getPuzzle().setScreen(new GateScreen(getPuzzle(), level));
+                Assets.playSound(Assets.btnSound);
                 return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                getPuzzle().setScreen(new GateScreen(getPuzzle(), level));
+                super.touchUp(event, x, y, pointer, button);
             }
         });
     }
@@ -171,7 +182,7 @@ public class GameScreen extends BaseScreen {
     private void addLabels() {
         float fontSize = 36;//default
         BitmapFont font = getOtherFont();
-        int scale = (int)(Assets.TOPBAR_HEIGHT / fontSize);
+        int scale = (int) (Assets.TOPBAR_HEIGHT / fontSize);
         font.setScale(scale);
         BitmapFont.TextBounds bounds = font.getBounds("00");
         labTime = new Label("", new Label.LabelStyle(font, Color.YELLOW));
@@ -179,11 +190,11 @@ public class GameScreen extends BaseScreen {
         addActor(labTime);
         float w = bounds.width;
         labCount = new Label("", new Label.LabelStyle(font, Color.RED));
-        labCount.setPosition(Assets.WIDTH - 3*Assets.TOP_BTN_SIZE - w/3, Assets.HEIGHT - Assets.TOPBAR_HEIGHT/2);
+        labCount.setPosition(Assets.WIDTH - 3 * Assets.TOP_BTN_SIZE - w / 3, Assets.HEIGHT - Assets.TOPBAR_HEIGHT / 2);
         addActor(labCount);
 
         Label c = new Label("挑战", new Label.LabelStyle(getGameFont(), Color.YELLOW));
-        c.setPosition(Assets.SPRITESIZE *3/2,  Assets.TOP_BTN_SIZE);
+        c.setPosition(Assets.SPRITESIZE * 3 / 2, Assets.TOP_BTN_SIZE);
         addActor(c);
     }
 
@@ -195,7 +206,7 @@ public class GameScreen extends BaseScreen {
     private void changeStar() {
         Assets.playSound(Assets.starSound);
         executStarCount = Executors.newSingleThreadScheduledExecutor();
-        executStarCount.scheduleAtFixedRate( new Runnable() {
+        executStarCount.scheduleAtFixedRate(new Runnable() {
             public void run() {
                 areaId++;
                 if (areaId < 3) {
@@ -211,7 +222,7 @@ public class GameScreen extends BaseScreen {
         handleHelp();
         handlePass();
         labTime.setText(timeStr);
-        labCount.setText(Settings.helpNum +"");
+        labCount.setText(Settings.helpNum + "");
     }
 
     private void handleHelp() {
@@ -231,9 +242,9 @@ public class GameScreen extends BaseScreen {
                 String[] answers = Answer.VALUES[gateNum].split(",");
                 String answer = answers[temp];
                 int pieceId = answer.charAt(0) - 48;//Aciis转成int
-                Piece piece = (Piece)pieces[pieceId];
+                Piece piece = (Piece) pieces[pieceId];
                 piece.setBounds(area.getX(), area.getY(), Assets.PIECE_SIZE, Assets.PIECE_SIZE);
-                piece.setOrientation(answer.charAt(1)-48);
+                piece.setOrientation(answer.charAt(1) - 48);
                 piece.setArea(temp);
                 area.setPieceId(pieceId);
             } else {
@@ -265,17 +276,17 @@ public class GameScreen extends BaseScreen {
     }
 
     private void computerStarNum() {
-        int minute = getSeconds()/60;
+        int minute = getSeconds() / 60;
         if (minute <= Answer.GRADE_1) {
             starNum = 3;
         } else if (minute > Answer.GRADE_1 && minute <= Answer.GRADE_2) {
             starNum = 2;
-        } else if (minute > Answer.GRADE_3 && minute <= Answer.GRADE_4){
+        } else if (minute > Answer.GRADE_3 && minute <= Answer.GRADE_4) {
             starNum = 1;
         } else {
             starNum = 0;
         }
-        if (Answer.gateStars.size() > challengeCtrl.getGateNum()) {
+        if (Answer.gateStars.size() > challengeCtrl.getGateNum()) {//可能重玩
             Answer.gateStars.set(challengeCtrl.getGateNum(), starNum);
         } else {
             Answer.gateStars.add(starNum);

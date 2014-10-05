@@ -13,6 +13,7 @@ import java.util.List;
  * Created by Administrator on 2014/7/5.
  */
 public class Challenge extends Group {
+    private final float imageSize = Assets.PIECE_SIZE / 3;
     private boolean isDraw;
 
     public Challenge(int level, int gateNum) {
@@ -26,7 +27,7 @@ public class Challenge extends Group {
             Image image = new Image(sprites.get(bmpIds[i]));
             float y = y_off + (- i / 3 + 2) * space;
             float x = x_off + i % 3 * space;
-            image.setBounds(x, y, Assets.PIECE_SIZE/3, Assets.PIECE_SIZE/3);
+            image.setBounds(x, y, imageSize, imageSize);
             addActor(image);
         }
         isDraw = true;
