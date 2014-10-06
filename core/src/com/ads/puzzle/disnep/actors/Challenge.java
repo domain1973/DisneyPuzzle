@@ -2,7 +2,6 @@ package com.ads.puzzle.disnep.actors;
 
 import com.ads.puzzle.disnep.Answer;
 import com.ads.puzzle.disnep.Assets;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -14,7 +13,6 @@ import java.util.List;
  */
 public class Challenge extends Group {
     private final float imageSize = Assets.PIECE_SIZE / 3;
-    private boolean isDraw;
 
     public Challenge(int level, int gateNum) {
         float space = Assets.WIDTH / 6;
@@ -29,18 +27,6 @@ public class Challenge extends Group {
             float x = x_off + i % 3 * space;
             image.setBounds(x, y, imageSize, imageSize);
             addActor(image);
-        }
-        isDraw = true;
-    }
-
-    public void setDraw(boolean isDraw) {
-        this.isDraw = isDraw;
-    }
-
-    @Override
-    public void draw(Batch batch, float parentAlpha) {
-        if (isDraw) {
-            super.draw(batch, parentAlpha);
         }
     }
 }

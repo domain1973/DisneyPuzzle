@@ -73,6 +73,20 @@ public class SupsendWin extends BaseWin {
         help.setBounds(x * 4, y2, btnSize, btnSize);
         Gdx.input.setInputProcessor(gameScreen.getStage());
 
+        share.addListener(new InputListener() {
+            @Override
+            public boolean touchDown(InputEvent event, float x, float y,
+                                     int pointer, int button) {
+                Assets.playSound(Assets.btnSound);
+                return true;
+            }
+
+            @Override
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                puzzle.getPEvent().share();
+                super.touchUp(event, x, y, pointer, button);
+            }
+        });
         buy.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,

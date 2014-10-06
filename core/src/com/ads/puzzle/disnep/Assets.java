@@ -94,6 +94,7 @@ public class Assets {
     public static int LEVEL_MAX = 6;
     public static float space = 10;
     private final static int LEVELNUM = 6;
+    public static List<Series> seriesList;
 
     public static void load() {
         initConstants();
@@ -199,7 +200,6 @@ public class Assets {
         }
     }
 
-    public static List<Series> seriesList;
     private static void loadAd() {
         try {
             seriesList = new ArrayList<Series>();
