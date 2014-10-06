@@ -1,6 +1,7 @@
 package com.ads.puzzle.disnep.controller;
 
 import com.ads.puzzle.disnep.Answer;
+import com.ads.puzzle.disnep.Assets;
 import com.ads.puzzle.disnep.actors.Challenge;
 
 /**
@@ -26,8 +27,10 @@ public class ChallengeController extends IController {
         if (Answer.isLasterSmallGate(gateNum)) {
             level++;
         }
-        challenge = new Challenge(level, gateNum);
-        addActor(challenge);
+        if (level < Assets.LEVEL_MAX) {
+            challenge = new Challenge(level, gateNum);
+            addActor(challenge);
+        }
     }
 
     public int getGateNum() {

@@ -113,7 +113,8 @@ public class PEventImpl extends PEvent {
         });
     }
 
-    private void save() {
+    @Override
+    public void save() {
         SharedPreferences.Editor sharedata = launcher.getSharedPreferences("data", 0).edit();
         sharedata.putBoolean("music", Settings.musicEnabled);
         sharedata.putBoolean("sound", Settings.soundEnabled);

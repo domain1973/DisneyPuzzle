@@ -69,7 +69,7 @@ public class LevelScreen extends OtherScreen {
 
     private void lock() {
         int tLevel = Settings.unlockGateNum / Answer.GATE_MAX;
-        if (level > tLevel) {
+        if (level > tLevel && level != Assets.LEVEL_MAX) {
             isAddLock = true;
         } else {
             isAddLock = false;

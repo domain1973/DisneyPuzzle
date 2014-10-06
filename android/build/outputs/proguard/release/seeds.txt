@@ -1686,6 +1686,11 @@ cn.sharesdk.onekeyshare.FollowList$RotateImageView: int rotation
 cn.sharesdk.onekeyshare.FollowList$RotateImageView: FollowList$RotateImageView(android.content.Context)
 cn.sharesdk.onekeyshare.FollowList$RotateImageView: void setRotation(int)
 cn.sharesdk.onekeyshare.FollowList$RotateImageView: void onDraw(android.graphics.Canvas)
+cn.sharesdk.onekeyshare.OneKeyShareCallback
+cn.sharesdk.onekeyshare.OneKeyShareCallback: OneKeyShareCallback()
+cn.sharesdk.onekeyshare.OneKeyShareCallback: void onComplete(cn.sharesdk.framework.Platform,int,java.util.HashMap)
+cn.sharesdk.onekeyshare.OneKeyShareCallback: void onError(cn.sharesdk.framework.Platform,int,java.lang.Throwable)
+cn.sharesdk.onekeyshare.OneKeyShareCallback: void onCancel(cn.sharesdk.framework.Platform,int)
 cn.sharesdk.onekeyshare.OnekeyShare
 cn.sharesdk.onekeyshare.OnekeyShare: int MSG_TOAST
 cn.sharesdk.onekeyshare.OnekeyShare: int MSG_ACTION_CCALLBACK

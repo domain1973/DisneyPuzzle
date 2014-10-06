@@ -141,8 +141,9 @@ public class ResultWin extends BaseWin {
                 ResultWin.this.remove();
                 gameScreen.return2init();
                 if (Answer.isLasterSmallGate(nextGateNum)) {
+                    int lv = nextGateNum / 11;
                     Puzzle puzzle = gameScreen.getPuzzle();
-                    puzzle.setScreen(new LevelScreen(puzzle, nextGateNum / 11));
+                    puzzle.setScreen(new LevelScreen(puzzle, lv));
                 }
                 super.touchUp(event, x, y, pointer, button);
             }
@@ -160,6 +161,7 @@ public class ResultWin extends BaseWin {
         if (Answer.gateStars.size() <= nextGateNum) {
             Answer.gateStars.add(0);
         }
+        gameScreen.getPuzzle().getPEvent().save();
         return nextGateNum;
     }
 

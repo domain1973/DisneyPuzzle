@@ -1858,6 +1858,10 @@ cn.sharesdk.onekeyshare.FollowList$RotateImageView -> cn.sharesdk.onekeyshare.Fo
     int rotation -> rotation
     void setRotation(int) -> setRotation
     void onDraw(android.graphics.Canvas) -> onDraw
+cn.sharesdk.onekeyshare.OneKeyShareCallback -> cn.sharesdk.onekeyshare.OneKeyShareCallback:
+    void onComplete(cn.sharesdk.framework.Platform,int,java.util.HashMap) -> onComplete
+    void onError(cn.sharesdk.framework.Platform,int,java.lang.Throwable) -> onError
+    void onCancel(cn.sharesdk.framework.Platform,int) -> onCancel
 cn.sharesdk.onekeyshare.OnekeyShare -> cn.sharesdk.onekeyshare.OnekeyShare:
     int MSG_TOAST -> MSG_TOAST
     int MSG_ACTION_CCALLBACK -> MSG_ACTION_CCALLBACK
@@ -2473,6 +2477,7 @@ com.ads.puzzle.disnep.PEvent -> com.ads.puzzle.disnep.c:
     void resetGame() -> d
     void share() -> e
     void install(java.lang.String) -> a
+    boolean isNetworkEnable() -> f
 com.ads.puzzle.disnep.Puzzle -> com.ads.puzzle.disnep.d:
     com.ads.puzzle.disnep.screen.MainScreen mainScreen -> a
     com.ads.puzzle.disnep.PEvent pEvent -> b
@@ -2506,9 +2511,6 @@ com.ads.puzzle.disnep.actors.Area -> com.ads.puzzle.disnep.a.a:
     void draw(com.badlogic.gdx.graphics.g2d.Batch,float) -> draw
 com.ads.puzzle.disnep.actors.Challenge -> com.ads.puzzle.disnep.a.b:
     float imageSize -> a
-    boolean isDraw -> b
-    void setDraw(boolean) -> a
-    void draw(com.badlogic.gdx.graphics.g2d.Batch,float) -> draw
 com.ads.puzzle.disnep.actors.Gate -> com.ads.puzzle.disnep.a.c:
     int gateNum -> a
     int getGateNum() -> a
@@ -2551,16 +2553,13 @@ com.ads.puzzle.disnep.android.AndroidLauncher$3 -> com.ads.puzzle.disnep.android
     void OnPayProcess(int) -> OnPayProcess
 com.ads.puzzle.disnep.android.AndroidLauncher$4 -> com.ads.puzzle.disnep.android.d:
     void run() -> run
-com.ads.puzzle.disnep.android.OneKeyShareCallback -> com.ads.puzzle.disnep.android.e:
-    void onComplete(cn.sharesdk.framework.Platform,int,java.util.HashMap) -> onComplete
-    void onError(cn.sharesdk.framework.Platform,int,java.lang.Throwable) -> onError
-    void onCancel(cn.sharesdk.framework.Platform,int) -> onCancel
-com.ads.puzzle.disnep.android.PEventImpl -> com.ads.puzzle.disnep.android.f:
+com.ads.puzzle.disnep.android.PEventImpl -> com.ads.puzzle.disnep.android.e:
     com.ads.puzzle.disnep.android.AndroidLauncher launcher -> a
     java.lang.String title -> b
     android.app.ProgressDialog progressDialog -> c
     android.os.Handler handler -> d
     java.lang.String gameLogoImage -> e
+    void openNetworkFailDlg() -> g
     void pay() -> a
     void exit$6185c5c4() -> b
     void sos(com.ads.puzzle.disnep.screen.GameScreen) -> a
@@ -2568,60 +2567,62 @@ com.ads.puzzle.disnep.android.PEventImpl -> com.ads.puzzle.disnep.android.f:
     void resetGame() -> d
     void share() -> e
     void install(java.lang.String) -> a
-    void initImagePath() -> f
+    boolean isNetworkEnable() -> f
+    boolean note_Intent(android.content.Context) -> a
+    void initImagePath() -> h
     java.io.File downLoadFile(java.lang.String) -> b
     java.lang.String access$000(com.ads.puzzle.disnep.android.PEventImpl) -> a
     com.ads.puzzle.disnep.android.AndroidLauncher access$100(com.ads.puzzle.disnep.android.PEventImpl) -> b
     void access$200(com.ads.puzzle.disnep.android.PEventImpl) -> c
     java.lang.String access$300(com.ads.puzzle.disnep.android.PEventImpl) -> d
     void access$400(com.ads.puzzle.disnep.android.PEventImpl) -> e
-com.ads.puzzle.disnep.android.PEventImpl$1 -> com.ads.puzzle.disnep.android.g:
+com.ads.puzzle.disnep.android.PEventImpl$1 -> com.ads.puzzle.disnep.android.f:
     com.ads.puzzle.disnep.android.PEventImpl this$0 -> a
     void run() -> run
-com.ads.puzzle.disnep.android.PEventImpl$1$1 -> com.ads.puzzle.disnep.android.h:
+com.ads.puzzle.disnep.android.PEventImpl$1$1 -> com.ads.puzzle.disnep.android.g:
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$2 -> com.ads.puzzle.disnep.android.i:
+com.ads.puzzle.disnep.android.PEventImpl$2 -> com.ads.puzzle.disnep.android.h:
     com.ads.puzzle.disnep.android.PEventImpl this$0 -> a
     void run() -> run
-com.ads.puzzle.disnep.android.PEventImpl$2$1 -> com.ads.puzzle.disnep.android.j:
+com.ads.puzzle.disnep.android.PEventImpl$2$1 -> com.ads.puzzle.disnep.android.i:
     com.ads.puzzle.disnep.android.PEventImpl$2 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$2$2 -> com.ads.puzzle.disnep.android.k:
+com.ads.puzzle.disnep.android.PEventImpl$2$2 -> com.ads.puzzle.disnep.android.j:
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$2$3 -> com.ads.puzzle.disnep.android.l:
+com.ads.puzzle.disnep.android.PEventImpl$2$3 -> com.ads.puzzle.disnep.android.k:
     com.ads.puzzle.disnep.android.PEventImpl$2 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$3 -> com.ads.puzzle.disnep.android.m:
+com.ads.puzzle.disnep.android.PEventImpl$3 -> com.ads.puzzle.disnep.android.l:
     com.ads.puzzle.disnep.screen.GameScreen val$gs -> a
     com.ads.puzzle.disnep.android.PEventImpl this$0 -> b
     void run() -> run
-com.ads.puzzle.disnep.android.PEventImpl$3$1 -> com.ads.puzzle.disnep.android.n:
+com.ads.puzzle.disnep.android.PEventImpl$3$1 -> com.ads.puzzle.disnep.android.m:
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$3$2 -> com.ads.puzzle.disnep.android.o:
+com.ads.puzzle.disnep.android.PEventImpl$3$2 -> com.ads.puzzle.disnep.android.n:
     com.ads.puzzle.disnep.android.PEventImpl$3 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$4 -> com.ads.puzzle.disnep.android.p:
+com.ads.puzzle.disnep.android.PEventImpl$4 -> com.ads.puzzle.disnep.android.o:
     com.ads.puzzle.disnep.android.PEventImpl this$0 -> a
     void run() -> run
-com.ads.puzzle.disnep.android.PEventImpl$4$1 -> com.ads.puzzle.disnep.android.q:
+com.ads.puzzle.disnep.android.PEventImpl$4$1 -> com.ads.puzzle.disnep.android.p:
     com.ads.puzzle.disnep.android.PEventImpl$4 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$4$2 -> com.ads.puzzle.disnep.android.r:
+com.ads.puzzle.disnep.android.PEventImpl$4$2 -> com.ads.puzzle.disnep.android.q:
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$4$3 -> com.ads.puzzle.disnep.android.s:
+com.ads.puzzle.disnep.android.PEventImpl$4$3 -> com.ads.puzzle.disnep.android.r:
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$5 -> com.ads.puzzle.disnep.android.t:
+com.ads.puzzle.disnep.android.PEventImpl$5 -> com.ads.puzzle.disnep.android.s:
     com.ads.puzzle.disnep.android.PEventImpl this$0 -> a
     void run() -> run
-com.ads.puzzle.disnep.android.PEventImpl$5$1 -> com.ads.puzzle.disnep.android.u:
+com.ads.puzzle.disnep.android.PEventImpl$5$1 -> com.ads.puzzle.disnep.android.t:
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$5$2 -> com.ads.puzzle.disnep.android.v:
+com.ads.puzzle.disnep.android.PEventImpl$5$2 -> com.ads.puzzle.disnep.android.u:
     com.ads.puzzle.disnep.android.PEventImpl$5 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.disnep.android.PEventImpl$6 -> com.ads.puzzle.disnep.android.w:
+com.ads.puzzle.disnep.android.PEventImpl$6 -> com.ads.puzzle.disnep.android.v:
     com.ads.puzzle.disnep.android.PEventImpl this$0 -> a
     void run() -> run
-com.ads.puzzle.disnep.android.PEventImpl$7 -> com.ads.puzzle.disnep.android.x:
+com.ads.puzzle.disnep.android.PEventImpl$7 -> com.ads.puzzle.disnep.android.w:
     com.ads.puzzle.disnep.android.PEventImpl this$0 -> a
     void run() -> run
 com.ads.puzzle.disnep.android.R$attr -> com.ads.puzzle.disnep.android.R$attr:
@@ -2882,7 +2883,7 @@ com.ads.puzzle.disnep.controller.AreaController -> com.ads.puzzle.disnep.b.a:
     com.ads.puzzle.disnep.actors.Area[] getAreas() -> b
     void handler() -> c
 com.ads.puzzle.disnep.controller.ChallengeController -> com.ads.puzzle.disnep.b.b:
-    java.util.Map map -> a
+    com.ads.puzzle.disnep.actors.Challenge challenge -> a
     int level -> b
     int gateNum -> c
     void handler() -> a
@@ -3248,35 +3249,39 @@ com.ads.puzzle.disnep.window.SupsendWin$1 -> com.ads.puzzle.disnep.e.k:
     com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.disnep.window.SupsendWin$2 -> com.ads.puzzle.disnep.e.l:
+com.ads.puzzle.disnep.window.SupsendWin$10 -> com.ads.puzzle.disnep.e.l:
     com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.disnep.window.SupsendWin$3 -> com.ads.puzzle.disnep.e.m:
+com.ads.puzzle.disnep.window.SupsendWin$2 -> com.ads.puzzle.disnep.e.m:
     com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.disnep.window.SupsendWin$4 -> com.ads.puzzle.disnep.e.n:
+com.ads.puzzle.disnep.window.SupsendWin$3 -> com.ads.puzzle.disnep.e.n:
     com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.disnep.window.SupsendWin$5 -> com.ads.puzzle.disnep.e.o:
+com.ads.puzzle.disnep.window.SupsendWin$4 -> com.ads.puzzle.disnep.e.o:
     com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.disnep.window.SupsendWin$6 -> com.ads.puzzle.disnep.e.p:
+com.ads.puzzle.disnep.window.SupsendWin$5 -> com.ads.puzzle.disnep.e.p:
     com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.disnep.window.SupsendWin$7 -> com.ads.puzzle.disnep.e.q:
+com.ads.puzzle.disnep.window.SupsendWin$6 -> com.ads.puzzle.disnep.e.q:
     com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.disnep.window.SupsendWin$8 -> com.ads.puzzle.disnep.e.r:
+com.ads.puzzle.disnep.window.SupsendWin$7 -> com.ads.puzzle.disnep.e.r:
     com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.disnep.window.SupsendWin$9 -> com.ads.puzzle.disnep.e.s:
+com.ads.puzzle.disnep.window.SupsendWin$8 -> com.ads.puzzle.disnep.e.s:
+    com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
+    boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
+    void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
+com.ads.puzzle.disnep.window.SupsendWin$9 -> com.ads.puzzle.disnep.e.t:
     com.ads.puzzle.disnep.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp

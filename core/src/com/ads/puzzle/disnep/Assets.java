@@ -93,7 +93,6 @@ public class Assets {
     public static float LEVEL_IMAGE_OFF_SIZE;
     public static int LEVEL_MAX = 6;
     public static float space = 10;
-    private final static int LEVELNUM = 6;
     public static List<Series> seriesList;
 
     public static void load() {
@@ -178,14 +177,14 @@ public class Assets {
     private static void createLevelSprite(TextureAtlas atlas) {
         SPRITESIZE = (int) WIDTH / 7;
         levelSpriteMap = new HashMap<Integer, List<Sprite>>();
-        for (int i = 1; i < LEVELNUM; i++) {
+        for (int i = 0; i < LEVEL_MAX; i++) {
             List<Sprite> sprites = new ArrayList<Sprite>();
             for (int m = 0; m < 5; m++) {
-                String spriteName = String.valueOf(i * 100 + m);
+                String spriteName = String.valueOf((i+1) * 100 + m);
                 Sprite s1 = atlas.createSprite(spriteName);
                 sprites.add(s1);
             }
-            levelSpriteMap.put(i - 1, sprites);
+            levelSpriteMap.put(i, sprites);
         }
     }
 

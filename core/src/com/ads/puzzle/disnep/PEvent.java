@@ -23,4 +23,6 @@ public abstract  class PEvent {
     public abstract void install(String url);
 
     public abstract boolean isNetworkEnable();
+
+    public abstract void save();
 }
