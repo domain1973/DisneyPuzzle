@@ -43,7 +43,7 @@ public class PEventImpl extends PEvent {
     private static final String adsUrl = "http://ads360.duapp.com/House";
     private static final String gameUrl = adsUrl + "/DisneyPuzzle";
     public static final String SHARE_TITLE = "有趣的迷宫";
-    public static final String SHARE_TEXT = "很有趣的一款益智游戏,聪明人的游戏,快来加入吧!";
+    public static final String SHARE_TEXT = "太难了,我不行,有种你来!";
     private AndroidLauncher launcher;
     private String title = "您好,我是小智";
     private ProgressDialog progressDialog;
