@@ -1,5 +1,6 @@
 package com.ads.puzzle.disnep.listener;
 
+import com.ads.puzzle.disnep.Assets;
 import com.ads.puzzle.disnep.actors.Area;
 import com.ads.puzzle.disnep.actors.Piece;
 import com.ads.puzzle.disnep.controller.AreaController;
@@ -67,6 +68,7 @@ public class PieceListener extends GestureDetector.GestureAdapter {
             Rectangle bounds = new Rectangle(piece.getX(), piece.getY(), piece.getWidth(), piece.getHeight());
             if (bounds.contains(touchPoint.x, touchPoint.y) && piece.getArea() > -1) {
                 piece.changeOrientation();//快速点击改变块方位
+                Assets.playSound(Assets.btnSound);
                 break;
             }
         }
@@ -129,6 +131,7 @@ public class PieceListener extends GestureDetector.GestureAdapter {
                     downActor.setArea(distArea.getId());
                     downActor.setBounds(distArea.getX(), distArea.getY(), distArea.getWidth(), distArea.getHeight());
                     distArea.setPieceId(downActor.getId());
+                    Assets.playSound(Assets.btnSound);
                     return super.fling(velocityX, velocityY, button);
                 }
             }
@@ -137,6 +140,7 @@ public class PieceListener extends GestureDetector.GestureAdapter {
                 //1 从大块移动到小块
                 areaActors[downActor.getArea()].setPieceId(-1);
                 downActor.return2BeginArea();
+                Assets.playSound(Assets.btnSound);
                 return super.fling(velocityX, velocityY, button);
             }
             downActor.setBounds(raw_x, raw_y, w, h);

@@ -245,7 +245,7 @@ public class Assets {
         musicbg = Gdx.audio.newMusic(Gdx.files.internal("data/musicbg.mp3"));    //加载背景音乐
         musicbg.setLooping(true);  //设置背景音乐循环播放
         musicbg.setVolume(0.5f);   //设置音量
-        if (Settings.soundEnabled)
+        if (Settings.musicEnabled)
             musicbg.play();        //播放背景音乐
 
         btnSound = Gdx.audio.newSound(Gdx.files.internal("data/btn.wav")); //加载跳跃时候的音效
