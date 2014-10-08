@@ -24,7 +24,9 @@ import cn.sharesdk.framework.PlatformActionListener;
 public class OneKeyShareCallback implements PlatformActionListener {
 
 	public void onComplete(Platform plat, int action, HashMap<String, Object> res) {
-        Settings.helpNum = Settings.helpNum + 1;
+        if (!plat.getName().equals("WechatFavorite")) {
+            Settings.helpNum = Settings.helpNum + 1;
+        }
     }
 
 	public void onError(Platform plat, int action, Throwable t) {

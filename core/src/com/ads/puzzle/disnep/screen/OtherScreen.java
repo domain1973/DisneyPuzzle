@@ -34,7 +34,7 @@ public class OtherScreen extends BaseScreen {
     protected void createBtns() {
         super.createBtns();
         shareBtn = new ImageButton(new TextureRegionDrawable(Assets.share));
-        shareBtn.setBounds(Assets.TOP_BTN_SIZE, getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
+        shareBtn.setBounds(Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
         shareBtn.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
@@ -50,7 +50,7 @@ public class OtherScreen extends BaseScreen {
             }
         });
         adBtn = new ImageButton(new TextureRegionDrawable(Assets.recommend));
-        adBtn.setBounds(Assets.TOP_BTN_SIZE * 2, getY_bar(), Assets.TOP_BTN_SIZE, Assets.TOP_BTN_SIZE);
+        adBtn.setBounds(Assets.TOPBAR_HEIGHT * 2, getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
         adBtn.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,

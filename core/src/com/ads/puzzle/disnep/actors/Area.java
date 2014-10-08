@@ -29,8 +29,6 @@ public class Area extends Group {
     private float y2;
     private float y1;
     private float y0;
-    private float y_off = Assets.TOPBAR_HEIGHT;
-    private float x_off = 20;
     private float spriteSize;
     private float x_bg;
     private float y_bg;
@@ -43,39 +41,37 @@ public class Area extends Group {
      * @param id
      */
     public Area(int id, int level) {
-        float line = Assets.space;
         this.id = id;
         this.level = level;
         pieceId = -1;
         size = Assets.PIECE_SIZE;
         spriteSize = Assets.PIECE_SIZE / 3;
         sprites = Assets.levelSpriteMap.get(level);
-        float t_off = Gdx.graphics.getHeight() - Assets.TOPBAR_HEIGHT - line / 2;
         if (id == 0) {
-            x_bg = x_off;
-            y_bg = t_off - size;
+            x_bg = Assets.H_SPACE;
+            y_bg = Assets.HEIGHT - size - Assets.TOPBAR_HEIGHT;
         } else if (id == 1) {
-            x_bg = x_off + size + line;
-            y_bg = t_off - size;
+            x_bg = 2*Assets.H_SPACE + size;
+            y_bg = Assets.HEIGHT - size - Assets.TOPBAR_HEIGHT;
         } else if (id == 2) {
-            x_bg = x_off;
-            y_bg = t_off - 2 * size - line;
+            x_bg = Assets.H_SPACE;
+            y_bg = Assets.HEIGHT - 2*size - Assets.TOPBAR_HEIGHT - Assets.SPACE;
         } else {
-            x_bg = x_off + size + line;
-            y_bg = t_off - 2 * size - line;
+            x_bg = 2*Assets.H_SPACE + size;
+            y_bg = Assets.HEIGHT - 2*size - Assets.TOPBAR_HEIGHT - Assets.SPACE;
         }
         setBounds(x_bg, y_bg, size, size);
 
-        x0 = x_off;
+        x0 = Assets.H_SPACE;
         x1 = x0 + spriteSize;
         x2 = x1 + spriteSize;
-        x3 = x2 + line + spriteSize;
+        x3 = x2 + Assets.SPACE + spriteSize;
         x4 = x3 + spriteSize;
         x5 = x4 + spriteSize;
-        y5 =t_off - spriteSize;
+        y5 = Assets.HEIGHT - Assets.TOPBAR_HEIGHT - spriteSize;
         y4 = y5 - spriteSize;
         y3 = y4 - spriteSize;
-        y2 = y3 - line - spriteSize;
+        y2 = y3 - Assets.SPACE - spriteSize;
         y1 = y2 - spriteSize;
         y0 = y1 - spriteSize;
     }

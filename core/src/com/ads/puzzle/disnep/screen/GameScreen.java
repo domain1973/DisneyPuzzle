@@ -102,7 +102,7 @@ public class GameScreen extends BaseScreen {
     private void createTopBar() {
         super.createBtns();
         ImageButton sos = new ImageButton(new TextureRegionDrawable(Assets.light));
-        sos.setBounds(Assets.WIDTH - 3 * Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOP_BTN_SIZE, Assets.TOP_BTN_SIZE);
+        sos.setBounds(Assets.WIDTH - 3 * Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
         sos.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
@@ -124,7 +124,7 @@ public class GameScreen extends BaseScreen {
         addActor(sos);
 
         ImageButton share = new ImageButton(new TextureRegionDrawable(Assets.share));
-        share.setBounds(Assets.WIDTH - 2 * Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOP_BTN_SIZE, Assets.TOP_BTN_SIZE);
+        share.setBounds(Assets.WIDTH - 2 * Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
         share.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
@@ -142,7 +142,7 @@ public class GameScreen extends BaseScreen {
         addActor(share);
 
         ImageButton suspend = new ImageButton(new TextureRegionDrawable(Assets.suspend));
-        suspend.setBounds(Assets.WIDTH - Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOP_BTN_SIZE, Assets.TOP_BTN_SIZE);
+        suspend.setBounds(Assets.WIDTH - Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
         suspend.addListener(new InputListener() {
             @Override
             public boolean touchDown(InputEvent event, float x, float y,
@@ -184,15 +184,15 @@ public class GameScreen extends BaseScreen {
         font.setScale(scale);
         BitmapFont.TextBounds bounds = font.getBounds("00");
         labTime = new Label("", new Label.LabelStyle(font, Color.YELLOW));
-        labTime.setPosition(Assets.TOP_BTN_SIZE, getY_bar() - bounds.height);
+        labTime.setPosition(Assets.TOPBAR_HEIGHT, getY_bar() - bounds.height);
         addActor(labTime);
         float w = bounds.width;
         labCount = new Label("", new Label.LabelStyle(font, Color.RED));
-        labCount.setPosition(Assets.WIDTH - 3 * Assets.TOP_BTN_SIZE - w / 3, Assets.HEIGHT - Assets.TOPBAR_HEIGHT / 2);
+        labCount.setPosition(Assets.WIDTH - 3 * Assets.TOPBAR_HEIGHT - w / 3, Assets.HEIGHT - Assets.TOPBAR_HEIGHT / 2);
         addActor(labCount);
 
         Label c = new Label("挑战", new Label.LabelStyle(getGameFont(), Color.YELLOW));
-        c.setPosition(Assets.SPRITESIZE * 3 / 2, Assets.TOP_BTN_SIZE);
+        c.setPosition(Assets.SPRITESIZE * 3 / 2, Assets.TOPBAR_HEIGHT);
         addActor(c);
     }
 
@@ -279,7 +279,7 @@ public class GameScreen extends BaseScreen {
             starNum = 3;
         } else if (minute > Answer.GRADE_1 && minute <= Answer.GRADE_2) {
             starNum = 2;
-        } else if (minute > Answer.GRADE_3 && minute <= Answer.GRADE_4) {
+        } else if (minute > Answer.GRADE_2 && minute <= Answer.GRADE_3) {
             starNum = 1;
         } else {
             starNum = 0;
@@ -292,7 +292,7 @@ public class GameScreen extends BaseScreen {
     }
 
     private void handleGate() {
-        if (seconds / 60 > Answer.GRADE_4) {//game over
+        if (seconds / 60 > Answer.GRADE_3) {//game over
             openResultWin = true; //关卡结束
             isPass = true;
         } else if (gestureDetector.isPass(challengeCtrl.getGateNum())) {

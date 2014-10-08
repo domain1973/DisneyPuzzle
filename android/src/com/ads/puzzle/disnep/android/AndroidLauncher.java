@@ -47,8 +47,6 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
     private final static String bucket = "ads-series";
     private final static String path = "/mnt/sdcard/";
 
-    private String adPngStr = "/ad.png";
-    private File adPng = new File(path + "ad.png");
     private String adAtlasStr = "/ad.atlas";
     private File adAtlas = new File(path + "ad.atlas");
     private String urlStr = "/url.txt";
@@ -265,7 +263,13 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
             baiduBCS.setDefaultEncoding("UTF-8"); // Default UTF-8
             getObjectWithDestFile(baiduBCS, adAtlasStr, adAtlas);
             getObjectWithDestFile(baiduBCS, urlStr, url);
-            getObjectWithDestFile(baiduBCS, adPngStr, adPng);
+            for (int i=1; i<Integer.MAX_VALUE; i++) {
+                try {
+                    getObjectWithDestFile(baiduBCS, "/ad" + i + ".png" , new File(path + "ad" + i + ".png"));
+                } catch (Exception x) {
+                    break;
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

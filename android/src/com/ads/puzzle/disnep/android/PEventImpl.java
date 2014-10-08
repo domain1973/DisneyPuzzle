@@ -161,7 +161,7 @@ public class PEventImpl extends PEvent {
                         }).setNeutralButton("分享", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        showShare();
                     }
                 }).setNegativeButton("智慧星", new DialogInterface.OnClickListener() {
                     @Override

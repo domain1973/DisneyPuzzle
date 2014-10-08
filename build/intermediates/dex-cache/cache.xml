@@ -8,12 +8,6 @@
         revision="19.1.0"
         sha1="30530a73af7a664d10f9a88a3cb264b765be7f09"/>
     <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\YoumiSdk_v4.09_2014-06-16-158c2254ce28e74286de886dba85d249a593caeb.jar"
-        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\YoumiSdk_v4.09_2014-06-16.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="160f21765370085650cbc089377fecb052903d17"/>
-    <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\UPPayAssistEx-84a9268ffae0dd58aa3840ddbecd731374d75964.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\UPPayAssistEx.jar"
         jumboMode="false"
@@ -26,12 +20,6 @@
         revision="19.1.0"
         sha1="160f21765370085650cbc089377fecb052903d17"/>
     <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\umilocalpaysdk-V221-72dc35567f642d7200c49ea957194a6073a50651.jar"
-        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\umilocalpaysdk-V221.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="e84c6949d4329bc95b4e5d90555bbe1f35873edc"/>
-    <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\umilocalpaysdk-V221-487a85891ee9c221da81381278547c224cb5288c.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\umilocalpaysdk-V221.jar"
         jumboMode="false"
@@ -43,12 +31,6 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="25509058b34a5ee08dbf66e57078e3083735d200"/>
-    <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\gdx-1.1.0-097daca50f1daa363ba4898ae0a70e0301ccd62f.jar"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx\1.1.0\686f5a609c717eb0769d3b954c501a49bf4fe351\gdx-1.1.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="686f5a609c717eb0769d3b954c501a49bf4fe351"/>
     <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-2.3.12-c8871d421e3ab763bfe43c5cda691e47768b67b1.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\ShareSDK-Wechat-2.3.12.jar"
@@ -68,47 +50,17 @@
         revision="19.1.0"
         sha1="48c94ae70fa65718b382098237806a5909bb096e"/>
     <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\UPPayAssistEx-48feadf5cf1593a88b09e00d97bdc5ca45966764.jar"
-        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\UPPayAssistEx.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="63776836123d01eb559a4924bb180d659970f1d1"/>
-    <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-Moments-2.3.12-b10fb638b22427c7ce7df78c9ec8f9d981a87df2.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\ShareSDK-Wechat-Moments-2.3.12.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="9f246b825db34f2593a3a20f93a196d2f291785a"/>
     <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\gdx-jnigen-a569f74d1af8a6b9fb905bad635caf289366fa80.jar"
-        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\gdx-jnigen.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="d952baf9ce9e225a91229de2f900ab0eb1c5de90"/>
-    <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\core-1.0-3131841b11f1017a29ef79d2ed549807d67ae283.jar"
-        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\core\build\libs\core-1.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="53957919dd70ed124e186345853148c1c959735c"/>
-    <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\UPPayPluginEx-e163efb3936dd3edb2ec7ce513e48ff7ceabd3af.jar"
-        jar="F:\ADWisdomHouse\Game\Puzzle\Disnep\libs\UPPayPluginEx.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="30530a73af7a664d10f9a88a3cb264b765be7f09"/>
-    <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\gdx-jnigen-5bf674b622ab0e79cf6fe98e8e81c62e8b8547d3.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\gdx-jnigen.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="d952baf9ce9e225a91229de2f900ab0eb1c5de90"/>
-    <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\Disnep\android\build\intermediates\pre-dexed\debug\gdx-backend-android-1.1.0-ae3334d5a87b3e7a55b5b1b4150a531a5e2def49.jar"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-backend-android\1.1.0\be72ba2987612670c7e9533bdaaa999955752237\gdx-backend-android-1.1.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="be72ba2987612670c7e9533bdaaa999955752237"/>
     <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\flexjson-2.1-53d250a8b4f6e2a51cc8eb7729a8197985b4e40e.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\flexjson-2.1.jar"
@@ -132,7 +84,7 @@
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\core\build\libs\core-1.0.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="2c91b60ff43fde1ea0a6f73ec40ce57236e718c0"/>
+        sha1="2dca96d98defccb61dd1d33de6f7915ca1e3109c"/>
     <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-Core-2.3.12-627022b847f1e7598ccda53604bfa7631e80ed43.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\ShareSDK-Wechat-Core-2.3.12.jar"

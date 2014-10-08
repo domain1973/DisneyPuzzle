@@ -473,15 +473,13 @@ com.ads.puzzle.disnep.Answer:
     public static final int GRADE_1
     public static final int GRADE_2
     public static final int GRADE_3
-    public static final int GRADE_4
     9:9:public Answer()
 com.ads.puzzle.disnep.Assets:
-    private static final int LEVELNUM
     33:33:public Assets()
 com.ads.puzzle.disnep.Settings:
     19:19:public Settings()
 com.ads.puzzle.disnep.actors.Area:
-    88:89:public void setId(int)
+    84:85:public void setId(int)
 com.ads.puzzle.disnep.actors.Gate:
     27:27:public int getId()
 com.ads.puzzle.disnep.android.AndroidLauncher:
@@ -505,7 +503,6 @@ com.ads.puzzle.disnep.controller.IController:
     public static final java.lang.String PIECE_CTRL
     public static final java.lang.String SMALLPIECE_CTRL
     public abstract void handler()
-com.ads.puzzle.disney.android.wxapi.WXEntryActivity
 com.esotericsoftware.tablelayout.BaseTableLayout$Debug:
     44:44:public static com.esotericsoftware.tablelayout.BaseTableLayout$Debug[] values()
     44:44:public static com.esotericsoftware.tablelayout.BaseTableLayout$Debug valueOf(java.lang.String)

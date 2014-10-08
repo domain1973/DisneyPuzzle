@@ -8,10 +8,9 @@ import java.util.List;
  */
 public class Answer {
     public static final int GATE_MAX = 12;
-    public final static int GRADE_1 = 3;
-    public final static int GRADE_2 = 6;
-    public final static int GRADE_3 = 9;
-    public final static int GRADE_4 = 12;
+    public final static int GRADE_1 = 1;
+    public final static int GRADE_2 = 3;
+    public final static int GRADE_3 = 5;
 
     public final static String[] TITLES = new String[]{
             "时间已到!", "恭喜您过关了!", "您真牛!", "您真棒!"};

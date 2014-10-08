@@ -83,16 +83,17 @@ public class Assets {
     public static Map<Integer, List<Sprite>> levelSpriteMap;//关卡精灵图标
     public static float SPRITESIZE;///关卡精灵图标大小
     public static Sprite[] pieces;
-    public static float TOP_BTN_SIZE;
     public static float TOPBAR_HEIGHT;//顶部按钮条的高度
     public static float WIDTH;
     public static float HEIGHT;
+    public static float SPACE;
+    public static float H_SPACE;
     public static float PIECE_SIZE;
+    public static float SPRITE_SIZE;
     public static float SMALL_PIECE_SIZE;
     public static float LEVEL_IMAGE_SIZE;
     public static float LEVEL_IMAGE_OFF_SIZE;
     public static int LEVEL_MAX = 6;
-    public static float space = 10;
     public static List<Series> seriesList;
 
     public static void load() {
@@ -110,11 +111,14 @@ public class Assets {
         WIDTH = Gdx.graphics.getWidth();
         HEIGHT = Gdx.graphics.getHeight();
         TOPBAR_HEIGHT = HEIGHT / 12;
-        TOP_BTN_SIZE = TOPBAR_HEIGHT;
-        SMALL_PIECE_SIZE = WIDTH / 4;
-        PIECE_SIZE = WIDTH / 2 - space * 2;
+        PIECE_SIZE = 29 * HEIGHT / 108;
+        SMALL_PIECE_SIZE = PIECE_SIZE / 2;
+        SPRITE_SIZE = PIECE_SIZE / 3;
         LEVEL_IMAGE_SIZE = WIDTH;
         LEVEL_IMAGE_OFF_SIZE = WIDTH / 7;
+        SPACE = HEIGHT / 72;
+        H_SPACE = (Assets.WIDTH - 2*Assets.PIECE_SIZE)/3;
+
     }
 
     private static void loadBmps(TextureAtlas atlas) {

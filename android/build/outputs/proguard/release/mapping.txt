@@ -2447,22 +2447,23 @@ com.ads.puzzle.disnep.Assets -> com.ads.puzzle.disnep.b:
     com.badlogic.gdx.graphics.g2d.TextureRegion gate_3star -> O
     com.badlogic.gdx.graphics.g2d.TextureRegion gate_lock -> P
     com.badlogic.gdx.graphics.g2d.TextureRegion lock -> Q
-    com.badlogic.gdx.graphics.g2d.TextureRegion[] cubes -> ag
+    com.badlogic.gdx.graphics.g2d.TextureRegion[] cubes -> ah
     java.util.List levels -> R
     java.util.Map levelSpriteMap -> S
     float SPRITESIZE -> T
     com.badlogic.gdx.graphics.g2d.Sprite[] pieces -> U
-    float TOP_BTN_SIZE -> V
-    float TOPBAR_HEIGHT -> W
-    float WIDTH -> X
-    float HEIGHT -> Y
-    float PIECE_SIZE -> Z
-    float SMALL_PIECE_SIZE -> aa
-    float LEVEL_IMAGE_SIZE -> ab
-    float LEVEL_IMAGE_OFF_SIZE -> ac
-    int LEVEL_MAX -> ad
-    float space -> ae
-    java.util.List seriesList -> af
+    float TOPBAR_HEIGHT -> V
+    float WIDTH -> W
+    float HEIGHT -> X
+    float SPACE -> Y
+    float H_SPACE -> Z
+    float PIECE_SIZE -> aa
+    float SPRITE_SIZE -> ab
+    float SMALL_PIECE_SIZE -> ac
+    float LEVEL_IMAGE_SIZE -> ad
+    float LEVEL_IMAGE_OFF_SIZE -> ae
+    int LEVEL_MAX -> af
+    java.util.List seriesList -> ag
     void load() -> a
     void creteMagicCubes(com.badlogic.gdx.graphics.g2d.TextureAtlas) -> a
     void createLevelSprite(com.badlogic.gdx.graphics.g2d.TextureAtlas) -> b
@@ -2478,6 +2479,7 @@ com.ads.puzzle.disnep.PEvent -> com.ads.puzzle.disnep.c:
     void share() -> e
     void install(java.lang.String) -> a
     boolean isNetworkEnable() -> f
+    void save() -> g
 com.ads.puzzle.disnep.Puzzle -> com.ads.puzzle.disnep.d:
     com.ads.puzzle.disnep.screen.MainScreen mainScreen -> a
     com.ads.puzzle.disnep.PEvent pEvent -> b
@@ -2500,11 +2502,10 @@ com.ads.puzzle.disnep.actors.Area -> com.ads.puzzle.disnep.a.a:
     float y2 -> m
     float y1 -> n
     float y0 -> o
-    float x_off -> p
-    float spriteSize -> q
-    float x_bg -> r
-    float y_bg -> s
-    java.util.List sprites -> t
+    float spriteSize -> p
+    float x_bg -> q
+    float y_bg -> r
+    java.util.List sprites -> s
     int getId() -> a
     int getPieceId() -> b
     void setPieceId(int) -> a
@@ -2518,7 +2519,6 @@ com.ads.puzzle.disnep.actors.Piece -> com.ads.puzzle.disnep.a.d:
     int area -> a
     int orientation -> b
     int id -> c
-    float space -> d
     void return2BeginArea() -> a
     void changeOrientation() -> b
     int getArea() -> c
@@ -2527,13 +2527,11 @@ com.ads.puzzle.disnep.actors.Piece -> com.ads.puzzle.disnep.a.d:
     void setOrientation(int) -> b
     int getId() -> e
 com.ads.puzzle.disnep.android.AndroidLauncher -> com.ads.puzzle.disnep.android.AndroidLauncher:
-    java.lang.String adPngStr -> a
-    java.io.File adPng -> b
-    java.lang.String adAtlasStr -> c
-    java.io.File adAtlas -> d
-    java.lang.String urlStr -> e
-    java.io.File url -> f
-    boolean initFail -> g
+    java.lang.String adAtlasStr -> a
+    java.io.File adAtlas -> b
+    java.lang.String urlStr -> c
+    java.io.File url -> d
+    boolean initFail -> e
     void onCreate(android.os.Bundle) -> onCreate
     void onBackPressed() -> onBackPressed
     boolean isNetwork() -> a
@@ -2559,9 +2557,10 @@ com.ads.puzzle.disnep.android.PEventImpl -> com.ads.puzzle.disnep.android.e:
     android.app.ProgressDialog progressDialog -> c
     android.os.Handler handler -> d
     java.lang.String gameLogoImage -> e
-    void openNetworkFailDlg() -> g
+    void openNetworkFailDlg() -> h
     void pay() -> a
     void exit$6185c5c4() -> b
+    void save() -> g
     void sos(com.ads.puzzle.disnep.screen.GameScreen) -> a
     void invalidateSos() -> c
     void resetGame() -> d
@@ -2569,7 +2568,7 @@ com.ads.puzzle.disnep.android.PEventImpl -> com.ads.puzzle.disnep.android.e:
     void install(java.lang.String) -> a
     boolean isNetworkEnable() -> f
     boolean note_Intent(android.content.Context) -> a
-    void initImagePath() -> h
+    void showShare() -> i
     java.io.File downLoadFile(java.lang.String) -> b
     java.lang.String access$000(com.ads.puzzle.disnep.android.PEventImpl) -> a
     com.ads.puzzle.disnep.android.AndroidLauncher access$100(com.ads.puzzle.disnep.android.PEventImpl) -> b
@@ -2608,6 +2607,7 @@ com.ads.puzzle.disnep.android.PEventImpl$4$1 -> com.ads.puzzle.disnep.android.p:
     com.ads.puzzle.disnep.android.PEventImpl$4 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.ads.puzzle.disnep.android.PEventImpl$4$2 -> com.ads.puzzle.disnep.android.q:
+    com.ads.puzzle.disnep.android.PEventImpl$4 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.ads.puzzle.disnep.android.PEventImpl$4$3 -> com.ads.puzzle.disnep.android.r:
     void onClick(android.content.DialogInterface,int) -> onClick
@@ -3027,6 +3027,7 @@ com.ads.puzzle.disnep.screen.GameScreen$1 -> com.ads.puzzle.disnep.d.h:
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
 com.ads.puzzle.disnep.screen.GameScreen$2 -> com.ads.puzzle.disnep.d.i:
+    com.ads.puzzle.disnep.screen.GameScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
 com.ads.puzzle.disnep.screen.GameScreen$3 -> com.ads.puzzle.disnep.d.j:
