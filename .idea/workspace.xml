@@ -53,28 +53,38 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2736" max-vertical-offset="7391">
-              <caret line="144" column="117" selection-start-line="144" selection-start-column="117" selection-end-line="144" selection-end-column="117" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2850" max-vertical-offset="6498">
+              <caret line="192" column="20" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidLauncher.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidLauncher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/com/ads/puzzle/disnep/android/AndroidLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.222222" vertical-offset="1311" max-vertical-offset="4446">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3981" max-vertical-offset="4522">
               <caret line="271" column="13" selection-start-line="271" selection-start-column="13" selection-end-line="271" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OtherScreen.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="OtherScreen.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/OtherScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1938">
-              <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.4649123" vertical-offset="962" max-vertical-offset="1691">
+              <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseScreen.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/BaseScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="218" max-vertical-offset="1368">
+              <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -103,7 +113,7 @@
       <file leaf-file-name="Answer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/Answer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="3344">
+            <state vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="3363">
               <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
@@ -135,16 +145,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="2489">
               <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Challenge.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/actors/Challenge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="703">
-              <caret line="20" column="104" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="104" />
               <folding />
             </state>
           </provider>
@@ -1992,7 +1992,6 @@
         <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/Software.java" />
         <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/listener/SeriesDetector.java" />
         <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/listener/SeriesListener.java" />
-        <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/BaseScreen.java" />
         <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/Series.java" />
         <option value="$PROJECT_DIR$/core/build.gradle" />
         <option value="$PROJECT_DIR$/android/build.gradle" />
@@ -2021,13 +2020,14 @@
         <option value="$PROJECT_DIR$/android/src/com/ads/puzzle/disnep/android/PEventImpl.java" />
         <option value="$PROJECT_DIR$/android/src/cn/sharesdk/onekeyshare/OneKeyShareCallback.java" />
         <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/Answer.java" />
-        <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/GameScreen.java" />
-        <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/OtherScreen.java" />
         <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/Assets.java" />
         <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/actors/Challenge.java" />
         <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/actors/Piece.java" />
         <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/actors/Area.java" />
         <option value="$PROJECT_DIR$/android/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/BaseScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/GameScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/OtherScreen.java" />
       </list>
     </option>
   </component>
@@ -2061,6 +2061,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2377,8 +2379,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2463,19 +2463,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -2501,6 +2488,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2782,13 +2782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/BaseScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="47" max-vertical-offset="1311">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/HelpScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="931">
@@ -2971,7 +2964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="684">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2986,23 +2978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2451" max-vertical-offset="5947">
           <caret line="162" column="56" selection-start-line="162" selection-start-column="40" selection-end-line="162" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2107" max-vertical-offset="6555">
-          <caret line="144" column="117" selection-start-line="144" selection-start-column="117" selection-end-line="144" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/OtherScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="335" max-vertical-offset="1672">
-          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3064,8 +3039,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/ads/puzzle/disnep/android/AndroidLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.222222" vertical-offset="1311" max-vertical-offset="4446">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3981" max-vertical-offset="4522">
           <caret line="271" column="13" selection-start-line="271" selection-start-column="13" selection-end-line="271" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/BaseScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="218" max-vertical-offset="1368">
+          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2850" max-vertical-offset="6498">
+          <caret line="192" column="20" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/ads/puzzle/disnep/screen/OtherScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4649123" vertical-offset="962" max-vertical-offset="1691">
+          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
           <folding />
         </state>
       </provider>

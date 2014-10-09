@@ -30,10 +30,13 @@ public class BaseScreen extends ScreenAdapter {
         puzzle = game;
         y_bar = Assets.HEIGHT - Assets.TOPBAR_HEIGHT;
         batch = stage.getBatch();
+        float scale = Assets.HEIGHT / 854;//default
         gameFont = new BitmapFont(Gdx.files.internal("puzzle.fnt"),
                 Gdx.files.internal("puzzle.png"), false);
+        gameFont.setScale(scale);
         otherFont = new BitmapFont(Gdx.files.internal("game.fnt"),
                 Gdx.files.internal("game.png"), false);
+        otherFont.setScale(scale);
     }
 
     @Override

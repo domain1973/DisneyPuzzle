@@ -178,10 +178,7 @@ public class GameScreen extends BaseScreen {
     }
 
     private void addLabels() {
-        float fontSize = 36;//default
         BitmapFont font = getOtherFont();
-        int scale = (int) (Assets.TOPBAR_HEIGHT / fontSize);
-        font.setScale(scale);
         BitmapFont.TextBounds bounds = font.getBounds("00");
         labTime = new Label("", new Label.LabelStyle(font, Color.YELLOW));
         labTime.setPosition(Assets.TOPBAR_HEIGHT, getY_bar() - bounds.height);

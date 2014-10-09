@@ -69,12 +69,13 @@ public class OtherScreen extends BaseScreen {
         });
         star = new Image(new TextureRegionDrawable(Assets.star));
         star.setBounds(Assets.WIDTH - Assets.TOPBAR_HEIGHT, getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
+
         BitmapFont font = getOtherFont();
         Label.LabelStyle labelStyle = new Label.LabelStyle(font, Color.WHITE); // 创建一个Label样式，使用默认白色字体
         String str = "总计:" + getStarNum();
+        BitmapFont.TextBounds bounds = font.getBounds(str);
         starLabel = new Label(str, labelStyle);
-        float w = font.getBounds(str).width;
-        starLabel.setBounds((Assets.WIDTH - w - Assets.TOPBAR_HEIGHT), getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
+        starLabel.setPosition(Assets.WIDTH - bounds.width - Assets.TOPBAR_HEIGHT, getY_bar());
 
         addActor(starLabel);
         addActor(shareBtn);
