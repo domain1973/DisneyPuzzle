@@ -1,39 +1,39 @@
-# view AndroidManifest.xml #generated:79
+# view AndroidManifest.xml #generated:80
 -keep class cn.sharesdk.framework.ShareSDKUIShell { <init>(...); }
 
-# view AndroidManifest.xml #generated:31
+# view AndroidManifest.xml #generated:32
 -keep class com.ads.puzzle.disnep.android.AndroidLauncher { <init>(...); }
 
-# view AndroidManifest.xml #generated:94
+# view AndroidManifest.xml #generated:95
 -keep class com.ads.puzzle.disnep.android.wxapi.WXEntryActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:72
+# view AndroidManifest.xml #generated:73
 -keep class com.unionpay.uppay.PayActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:65
+# view AndroidManifest.xml #generated:66
 -keep class com.unionpay.uppay.PayActivityEx { <init>(...); }
 
-# view AndroidManifest.xml #generated:62
+# view AndroidManifest.xml #generated:63
 -keep class net.umipay.android.UmipayBrowser { <init>(...); }
 
-# view AndroidManifest.xml #generated:113
+# view AndroidManifest.xml #generated:114
 -keep class net.umipay.android.poll.Push_Alarm_Receiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:108
+# view AndroidManifest.xml #generated:109
 -keep class net.umipay.android.poll.Push_Boot_Receiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:101
+# view AndroidManifest.xml #generated:102
 -keep class net.umipay.android.poll.Push_Poll_service { <init>(...); }
 
-# view AndroidManifest.xml #generated:104
+# view AndroidManifest.xml #generated:105
 -keep class net.umipay.android.poll.SmsReceiverService { <init>(...); }
 
-# view AndroidManifest.xml #generated:43
+# view AndroidManifest.xml #generated:44
 -keep class net.youmi.android.AdBrowser { <init>(...); }
 
-# view AndroidManifest.xml #generated:54
+# view AndroidManifest.xml #generated:55
 -keep class net.youmi.android.AdReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:49
+# view AndroidManifest.xml #generated:50
 -keep class net.youmi.android.AdService { <init>(...); }
 

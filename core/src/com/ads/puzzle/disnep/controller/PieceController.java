@@ -10,24 +10,23 @@ import com.badlogic.gdx.utils.SnapshotArray;
  * Created by Administrator on 2014/7/4.
  */
 public class PieceController extends IController {
-
-    private Rectangle fixArea;
+    private Rectangle fixAreaBounds;
 
     public PieceController(String name) {
         setName(name);
         for (int i = 0; i < 4; i++) {
             Piece piece = new Piece(i);
-            if (i == 2) {
-                fixArea = new Rectangle(piece.getX(), piece.getY(), Assets.SMALL_PIECE_SIZE * 2, Assets.SMALL_PIECE_SIZE * 2);
-            }
             addActor(piece);
+            if (i == 2) {
+                fixAreaBounds = new Rectangle(piece.getX(), piece.getY(), Assets.SMALL_PIECE_SIZE * 2, Assets.SMALL_PIECE_SIZE * 2);
+            }
         }
     }
 
     @Override
     public void handler() {
         SnapshotArray<Actor> actors = getChildren();
-        for (int i=0; i<actors.size; i++) {
+        for (int i = 0; i < actors.size; i++) {
             Actor actor = actors.get(i);
             Piece piece = (Piece) actor;
             piece.return2BeginArea();
@@ -35,6 +34,6 @@ public class PieceController extends IController {
     }
 
     public Rectangle getFixAreaBounds() {
-        return fixArea;
+        return fixAreaBounds;
     }
 }

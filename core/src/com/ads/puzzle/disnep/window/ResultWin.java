@@ -9,7 +9,6 @@ import com.ads.puzzle.disnep.controller.ChallengeController;
 import com.ads.puzzle.disnep.controller.IController;
 import com.ads.puzzle.disnep.controller.PieceController;
 import com.ads.puzzle.disnep.screen.GameScreen;
-import com.ads.puzzle.disnep.screen.GateScreen;
 import com.ads.puzzle.disnep.screen.LevelScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -54,7 +53,9 @@ public class ResultWin extends BaseWin {
         gameScreen = gs;
         create();
     }
+
     float win_H;
+
     public void create() {
         float btnSize = Assets.WIDTH / 6;
         gameScreen.getStage().addActor(layerBg);
@@ -81,9 +82,9 @@ public class ResultWin extends BaseWin {
         float y = win_H / 6;
         gateBtn.setBounds(btn_size, y, btn_size, btn_size);
         refresh = new ImageButton(new TextureRegionDrawable(Assets.refresh), new TextureRegionDrawable(Assets.refresh));
-        refresh.setBounds(2*btn_size, y, btn_size, btn_size);
+        refresh.setBounds(2 * btn_size, y, btn_size, btn_size);
         next = new ImageButton(new TextureRegionDrawable(Assets.next), new TextureRegionDrawable(Assets.next));
-        next.setBounds(3* btn_size, y, btn_size, btn_size);
+        next.setBounds(3 * btn_size, y, btn_size, btn_size);
     }
 
     private void addListeners() {
@@ -98,10 +99,13 @@ public class ResultWin extends BaseWin {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 if (starNum > 0) {//时间已到,回关卡时,不能更新状态
-                    updateGateNum();
+                    int nextGateNum = updateGateNum();
+                    gameScreen.getGateScreen().buildGateImage((nextGateNum - 1 )/ Answer.GATE_MAX);
                 }
                 layerBg.remove();
-                gameScreen.getPuzzle().setScreen(new GateScreen(gameScreen.getPuzzle(), gameScreen.getLevel()));
+                ResultWin.this.remove();
+                gameScreen.refreshGame();
+                gameScreen.getPuzzle().setScreen(gameScreen.getGateScreen());
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -141,9 +145,11 @@ public class ResultWin extends BaseWin {
                 ResultWin.this.remove();
                 gameScreen.return2init();
                 if (Answer.isLasterSmallGate(nextGateNum)) {
-                    int lv = nextGateNum / 11;
+                    int lv = nextGateNum / Answer.GATE_MAX;
                     Puzzle puzzle = gameScreen.getPuzzle();
-                    puzzle.setScreen(new LevelScreen(puzzle, lv));
+                    LevelScreen levelScreen = puzzle.getMainScreen().getLevelScreen();
+                    levelScreen.setLevel(lv);
+                    puzzle.setScreen(levelScreen);
                 }
                 super.touchUp(event, x, y, pointer, button);
             }
@@ -175,7 +181,7 @@ public class ResultWin extends BaseWin {
         float v = (Assets.WIDTH - starW) / 2;
         star_nulls = new Image[3];
         stars = new Image[3];
-        float y1 = win_H/2;
+        float y1 = win_H / 2;
         for (int i = 0; i < 3; i++) {
             star_nulls[i] = new Image(Assets.star_null);
             stars[i] = new Image(Assets.star);
@@ -214,10 +220,10 @@ public class ResultWin extends BaseWin {
     private void changeStar() {
         Assets.playSound(Assets.starSound);
         executStarCount = Executors.newSingleThreadScheduledExecutor();
-        executStarCount.scheduleAtFixedRate( new Runnable() {
+        executStarCount.scheduleAtFixedRate(new Runnable() {
             public void run() {
                 starIndex++;
-                if (starIndex < 3) {
+                if (starIndex < starNum) {
                     Assets.playSound(Assets.starSound);
                 }
             }

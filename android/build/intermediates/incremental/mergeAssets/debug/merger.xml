@@ -43,9 +43,6 @@
                 name="p4.png"
                 path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\p4.png" />
             <file
-                name="p5.png"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\p5.png" />
-            <file
                 name="puzzle"
                 path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\puzzle" />
             <file
@@ -63,6 +60,9 @@
             <file
                 name="ShareSDK.xml"
                 path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\ShareSDK.xml" />
+            <file
+                name="p5.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\assets\p5.png" />
         </source>
     </dataSet>
     <dataSet config="debug" >

@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class PieceDetector extends GestureDetector {
     private Stage stage;
-    private String[][] answers = {{"2,3,6","0,7,8","2,5,6","0,1,8"},{"1,7","3,5","1,7","3,5"},{"4,7","4,5","1,4","3,4"},{"2,7","0,5","1,6","3,8"}};
-    private int[][] areaAnswers = {{0,-1,1,2,3,2,4,1,0},{3,-1,1,-1,2,0,1,4,3},{4,0,2,3,-1,3,1,-1,4},{-1,-1,-1,-1,4,1,3,0,2}};
+    private String[][] answers = {{"2,3,6", "0,7,8", "2,5,6", "0,1,8"}, {"1,7", "3,5", "1,7", "3,5"}, {"4,7", "4,5", "1,4", "3,4"}, {"2,7", "0,5", "1,6", "3,8"}};
+    private int[][] areaAnswers = {{0, -1, 1, 2, 3, 2, 4, 1, 0}, {3, -1, 1, -1, 2, 0, 1, 4, 3}, {4, 0, 2, 3, -1, 3, 1, -1, 4}, {-1, -1, -1, -1, 4, 1, 3, 0, 2}};
 
     /**
      * Creates a new GestureDetector with default values: halfTapSquareSize=20, tapCountInterval=0.4f, longPressDuration=1.1f,
@@ -37,7 +37,7 @@ public class PieceDetector extends GestureDetector {
         AreaController areaCtrl = (AreaController) stage.getRoot().findActor(IController.AREA_CTRL);
         SnapshotArray<Actor> children = areaCtrl.getChildren();
         for (Actor actor : children) {
-            Area area = (Area)actor;
+            Area area = (Area) actor;
             if (area.getPieceId() == -1) {
                 return false;
             }

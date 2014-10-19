@@ -89,16 +89,6 @@
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
-                name="auth_follow_cb_chd"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\auth_follow_cb_chd.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="auth_follow_cb_unc"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\auth_follow_cb_unc.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
                 name="auth_title_back"
                 path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\auth_title_back.png"
                 qualifiers="xhdpi-v4"
@@ -134,136 +124,6 @@
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
-                name="logo_douban"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_douban.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_dropbox"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_dropbox.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_email"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_email.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_evernote"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_evernote.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_facebook"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_facebook.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_flickr"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_flickr.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_foursquare"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_foursquare.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_googleplus"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_googleplus.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_instagram"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_instagram.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_kaixin"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_kaixin.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_line"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_line.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_linkedin"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_linkedin.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_mingdao"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_mingdao.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_neteasemicroblog"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_neteasemicroblog.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_pinterest"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_pinterest.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_qq"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_qq.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_qzone"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_qzone.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_renren"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_renren.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_shortmessage"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_shortmessage.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_sinaweibo"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_sinaweibo.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_sohumicroblog"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_sohumicroblog.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_sohusuishenkan"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_sohusuishenkan.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_tencentweibo"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_tencentweibo.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_tumblr"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_tumblr.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_twitter"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_twitter.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_vkontakte"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_vkontakte.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
                 name="logo_wechat"
                 path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_wechat.png"
                 qualifiers="xhdpi-v4"
@@ -276,26 +136,6 @@
             <file
                 name="logo_wechatmoments"
                 path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_wechatmoments.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_yixin"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_yixin.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_yixinmoments"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_yixinmoments.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="logo_youdao"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\logo_youdao.png"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="pin"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\pin.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
@@ -321,11 +161,6 @@
             <file
                 name="ssdk_oks_shake_to_share_back"
                 path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\ssdk_oks_shake_to_share_back.xml"
-                qualifiers="xhdpi-v4"
-                type="drawable" />
-            <file
-                name="ssdk_oks_yaoyiyao"
-                path="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\res\drawable-xhdpi\ssdk_oks_yaoyiyao.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
@@ -407,9 +242,9 @@
                 </string>
                 <string name="pull_to_refresh" >下拉刷新
                 </string>
-                <string name="share_to" >分享到
-                </string>
                 <string name="share" >分享
+                </string>
+                <string name="share_to" >分享到
                 </string>
             </file>
             <file
@@ -423,19 +258,19 @@
                 </string>
                 <string name="facebook" >Facebook
                 </string>
-                <string name="instagram" >Instagram
+                <string name="line_client_inavailable" >目前您的Line版本过低或未安装易信，需要安装Line才能使用
                 </string>
                 <string name="vkontakte" >VK
                 </string>
-                <string name="line_client_inavailable" >目前您的Line版本过低或未安装易信，需要安装Line才能使用
-                </string>
-                <string name="tencentweibo" >腾讯微博
+                <string name="instagram" >Instagram
                 </string>
                 <string name="wechatmoments" >微信朋友圈
                 </string>
-                <string name="evernote" >印象笔记
+                <string name="tencentweibo" >腾讯微博
                 </string>
                 <string name="kaixin" >开心网
+                </string>
+                <string name="evernote" >印象笔记
                 </string>
                 <string name="douban" >豆瓣
                 </string>
@@ -465,19 +300,19 @@
                 </string>
                 <string name="instagram_client_inavailable" >Instagram版本过低或者没有安装，需要升级或安装Instagram才能使用！
                 </string>
-                <string name="flickr" >Flickr
-                </string>
                 <string name="pinterest" >Pinterest
+                </string>
+                <string name="flickr" >Flickr
                 </string>
                 <string name="twitter" >Twitter
                 </string>
                 <string name="email" >邮件
                 </string>
-                <string name="dropbox" >Dropbox
+                <string name="wechatfavorite" >微信收藏
                 </string>
                 <string name="googleplus" >Google+
                 </string>
-                <string name="wechatfavorite" >微信收藏
+                <string name="dropbox" >Dropbox
                 </string>
                 <string name="qq_client_inavailable" >QQ 版本过低或者没有安装，需要升级或安装QQ才能使用！
                 </string>
@@ -485,31 +320,31 @@
                 </string>
                 <string name="share_to_qzone_default" >来自%s的分享
                 </string>
-                <string name="use_login_button" >请改用“登录”按钮
-                </string>
                 <string name="mingdao_share_content" >网页分享
+                </string>
+                <string name="use_login_button" >请改用“登录”按钮
                 </string>
                 <string name="sohusuishenkan" >搜狐随身看
                 </string>
                 <string name="shortmessage" >信息
                 </string>
-                <string name="sinaweibo" >新浪微博
-                </string>
                 <string name="wechat_client_inavailable" >目前您的微信版本过低或未安装微信，需要安装微信才能使用
+                </string>
+                <string name="sinaweibo" >新浪微博
                 </string>
                 <string name="weibo_oauth_regiseter" >应用授权
                 </string>
                 <string name="neteasemicroblog" >网易微博
                 </string>
-                <string name="share_to_qq" >分享到QQ
+                <string name="website" >http://www.shareSDK.cn
                 </string>
                 <string name="weibo_upload_content" >分享图片
                 </string>
-                <string name="website" >http://www.shareSDK.cn
-                </string>
-                <string name="mingdao" >明道
+                <string name="share_to_qq" >分享到QQ
                 </string>
                 <string name="yixinmoments" >易信朋友圈
+                </string>
+                <string name="mingdao" >明道
                 </string>
             </file>
             <file
@@ -550,29 +385,15 @@ true
                 qualifiers="" >
                 <color name="widget.border" >#d4d4d4
                 </color>
+                <color name="list.border" >#d4d4d4
+                </color>
+                <color name="f.g" >#aaa
+                </color>
                 <color name="list.line" >#e8e8e8
                 </color>
                 <color name="link" >#f78830
                 </color>
                 <color name="f.xs" >#b9b9b9
-                </color>
-                <color name="b.full" >#D5000000
-                </color>
-                <color name="f.w" >#fff
-                </color>
-                <color name="list.even" >#f7f7f7
-                </color>
-                <color name="transparent" >#00000000
-                </color>
-                <color name="highlight" >#f78830
-                </color>
-                <color name="g.gray" >#bfbfbf
-                </color>
-                <color name="strip" >#e8e8e8
-                </color>
-                <color name="f.g" >#aaa
-                </color>
-                <color name="list.border" >#d4d4d4
                 </color>
                 <color name="f.l" >#333333
                 </color>
@@ -588,13 +409,27 @@ true
                 </color>
                 <color name="g.green" >#74b626
                 </color>
+                <color name="b.full" >#D5000000
+                </color>
+                <color name="f.w" >#fff
+                </color>
                 <color name="bg" >#fafafa
+                </color>
+                <color name="list.even" >#f7f7f7
                 </color>
                 <color name="umipay_oauth_textcolor_pressed" >#fff
                 </color>
+                <color name="transparent" >#00000000
+                </color>
+                <color name="highlight" >#f78830
+                </color>
                 <color name="umipay_oauth_textcolor_normal" >#dedede
                 </color>
+                <color name="g.gray" >#bfbfbf
+                </color>
                 <color name="list.light" >#fff9c9
+                </color>
+                <color name="strip" >#e8e8e8
                 </color>
                 <color name="f.b" >#000
                 </color>
@@ -781,6 +616,17 @@ vertical
                 </style>
 
                 <style
+                    name="um_titlebar_ly"
+                    parent="um_block" >
+                    <item name="android:layout_height">
+66dp
+                    </item>
+                    <item name="android:layout_gravity">
+center_horizontal
+                    </item>
+                </style>
+
+                <style
                     name="um_oauth_login_land"
                     parent="um_oauth_login" >
                     <item name="android:orientation">
@@ -794,40 +640,6 @@ false
                     </item>
                     <item name="android:layout_gravity">
 center_horizontal
-                    </item>
-                </style>
-
-                <style
-                    name="um_titlebar_ly"
-                    parent="um_block" >
-                    <item name="android:layout_height">
-66dp
-                    </item>
-                    <item name="android:layout_gravity">
-center_horizontal
-                    </item>
-                </style>
-
-                <style
-                    name="um_toast_title"
-                    parent="um_wr" >
-                    <item name="android:layout_gravity">
-center_horizontal
-                    </item>
-                    <item name="android:gravity">
-center_horizontal
-                    </item>
-                    <item name="android:layout_marginLeft">
-5dp
-                    </item>
-                    <item name="android:layout_marginRight">
-5dp
-                    </item>
-                    <item name="android:textColor">
-#fff
-                    </item>
-                    <item name="android:textSize">
-14sp
                     </item>
                 </style>
 
@@ -872,13 +684,25 @@ bottom|left
                 </style>
 
                 <style
-                    name="um_reg_login_ly_land"
-                    parent="um_reg_login_ly" >
-                    <item name="android:orientation">
-vertical
+                    name="um_toast_title"
+                    parent="um_wr" >
+                    <item name="android:layout_gravity">
+center_horizontal
                     </item>
-                    <item name="android:layout_marginTop">
-10dp
+                    <item name="android:gravity">
+center_horizontal
+                    </item>
+                    <item name="android:layout_marginLeft">
+5dp
+                    </item>
+                    <item name="android:layout_marginRight">
+5dp
+                    </item>
+                    <item name="android:textColor">
+#fff
+                    </item>
+                    <item name="android:textSize">
+14sp
                     </item>
                 </style>
 
@@ -887,6 +711,17 @@ vertical
                     parent="fn" >
                     <item name="android:textSize">
 12sp
+                    </item>
+                </style>
+
+                <style
+                    name="um_reg_login_ly_land"
+                    parent="um_reg_login_ly" >
+                    <item name="android:orientation">
+vertical
+                    </item>
+                    <item name="android:layout_marginTop">
+10dp
                     </item>
                 </style>
 
@@ -1374,6 +1209,17 @@ fill_parent
                 </style>
 
                 <style
+                    name="fn"
+                    parent="text" >
+                    <item name="android:layout_width">
+wrap_content
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                </style>
+
+                <style
                     name="um_toast_content_parent"
                     parent="um_block" >
                     <item name="android:gravity">
@@ -1391,28 +1237,6 @@ vertical
                 </style>
 
                 <style
-                    name="fn"
-                    parent="text" >
-                    <item name="android:layout_width">
-wrap_content
-                    </item>
-                    <item name="android:layout_height">
-wrap_content
-                    </item>
-                </style>
-
-                <style
-                    name="um_insert_land"
-                    parent="um_insert" >
-                    <item name="android:layout_gravity">
-left
-                    </item>
-                    <item name="android:layout_marginTop">
--50dp
-                    </item>
-                </style>
-
-                <style
                     name="h1"
                     parent="h2" >
                     <item name="android:layout_width">
@@ -1426,6 +1250,17 @@ center
                     </item>
                     <item name="android:singleLine">
 true
+                    </item>
+                </style>
+
+                <style
+                    name="um_insert_land"
+                    parent="um_insert" >
+                    <item name="android:layout_gravity">
+left
+                    </item>
+                    <item name="android:layout_marginTop">
+-50dp
                     </item>
                 </style>
 
@@ -1488,18 +1323,6 @@ true
                     </item>
                 </style>
 
-                <style name="um_block" >
-                    <item name="android:layout_width">
-fill_parent
-                    </item>
-                    <item name="android:layout_height">
-wrap_content
-                    </item>
-                    <item name="android:background">
-@null
-                    </item>
-                </style>
-
                 <style
                     name="h2"
                     parent="fn" >
@@ -1512,6 +1335,18 @@ wrap_content
                     <!-- item name="android:textStyle">bold</item -->
                     <item name="android:gravity">
 left
+                    </item>
+                </style>
+
+                <style name="um_block" >
+                    <item name="android:layout_width">
+fill_parent
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                    <item name="android:background">
+@null
                     </item>
                 </style>
 
@@ -1611,6 +1446,20 @@ fill_parent
                 </style>
 
                 <style
+                    name="um_toast_content_child"
+                    parent="um_block" >
+                    <item name="android:layout_centerInParent">
+true
+                    </item>
+                    <item name="android:gravity">
+center
+                    </item>
+                    <item name="android:orientation">
+vertical
+                    </item>
+                </style>
+
+                <style
                     name="um_toast_title_ly"
                     parent="um_block" >
                     <item name="android:layout_marginTop">
@@ -1634,16 +1483,21 @@ horizontal
                 </style>
 
                 <style
-                    name="um_toast_content_child"
+                    name="um_box_row_ly"
                     parent="um_block" >
-                    <item name="android:layout_centerInParent">
-true
+                    <item name="android:layout_marginTop">
+6dp
                     </item>
-                    <item name="android:gravity">
-center
-                    </item>
+                </style>
+
+                <style
+                    name="um_oauth_login"
+                    parent="um_block" >
                     <item name="android:orientation">
 vertical
+                    </item>
+                    <item name="android:layout_centerHorizontal">
+true
                     </item>
                 </style>
 
@@ -1662,25 +1516,6 @@ vertical
                 </style>
 
                 <style
-                    name="um_oauth_login"
-                    parent="um_block" >
-                    <item name="android:orientation">
-vertical
-                    </item>
-                    <item name="android:layout_centerHorizontal">
-true
-                    </item>
-                </style>
-
-                <style
-                    name="um_box_row_ly"
-                    parent="um_block" >
-                    <item name="android:layout_marginTop">
-6dp
-                    </item>
-                </style>
-
-                <style
                     name="um_wr_h"
                     parent="um_wr" >
                     <item name="android:orientation">
@@ -1695,29 +1530,29 @@ horizontal
                 </string>
                 <string name="share_to" >Share to 
                 </string>
-                <string name="release_to_refresh" >Release to refresh
+                <string name="pull_to_refresh" >Pull down to refresh
+                </string>
+                <string name="sharing" >Sharing operation is working in the background…
                 </string>
                 <string name="share_canceled" >Operation canceled
+                </string>
+                <string name="release_to_refresh" >Release to refresh
+                </string>
+                <string name="share_completed" >Operation succeeded
+                </string>
+                <string name="multi_share" >Photo Sharing
                 </string>
                 <string name="shake2share" >Shake your phone!
                 </string>
                 <string name="select_one_plat_at_least" >Please select a target platform
                 </string>
-                <string name="cancel" >Cancel
-                </string>
-                <string name="share_failed" >Operation failed
-                </string>
-                <string name="sharing" >Sharing operation is working in the background…
-                </string>
-                <string name="pull_to_refresh" >Pull down to refresh
-                </string>
-                <string name="multi_share" >Photo Sharing
-                </string>
-                <string name="share_completed" >Operation succeeded
-                </string>
                 <string name="share" >Share
                 </string>
                 <string name="finish" >Finish
+                </string>
+                <string name="cancel" >Cancel
+                </string>
+                <string name="share_failed" >Operation failed
                 </string>
                 <string name="list_friends" >Friends on %s
                 </string>
@@ -1729,23 +1564,23 @@ horizontal
                 </string>
                 <string name="share_to_mingdao" >Share To Mingdao
                 </string>
-                <string name="youdao" >Youdao
-                </string>
                 <string name="email" >Email
                 </string>
-                <string name="linkedin" >Linked in
+                <string name="youdao" >Youdao
                 </string>
                 <string name="neteasemicroblog" >Netease Microblog
                 </string>
-                <string name="instagram" >Instagram
+                <string name="linkedin" >Linked in
                 </string>
-                <string name="qq" >QQ
+                <string name="instagram" >Instagram
                 </string>
                 <string name="foursquare" >FourSquare
                 </string>
-                <string name="vkontakte" >VK
+                <string name="qq" >QQ
                 </string>
                 <string name="weibo_oauth_regiseter" >Authorization
+                </string>
+                <string name="vkontakte" >VK
                 </string>
                 <string name="website" >http://www.shareSDK.cn
                 </string>
@@ -1773,21 +1608,21 @@ horizontal
                 </string>
                 <string name="mingdao" >Mingdao
                 </string>
-                <string name="pinterest" >Pinterest
-                </string>
                 <string name="instagram_client_inavailable" >Instagram client not exists or the version is too low
                 </string>
-                <string name="share_to_qzone_default" >Shared from %s
+                <string name="pinterest" >Pinterest
                 </string>
                 <string name="line" >Line
+                </string>
+                <string name="share_to_qzone_default" >Shared from %s
                 </string>
                 <string name="renren" >Renren
                 </string>
                 <string name="share_to_qzone" >Share To QZone
                 </string>
-                <string name="pinterest_client_inavailable" >Pinterest client not exists or the version is too low
-                </string>
                 <string name="wechat_client_inavailable" >Wechat client not exists or the version is too low
+                </string>
+                <string name="pinterest_client_inavailable" >Pinterest client not exists or the version is too low
                 </string>
                 <string name="qq_client_inavailable" >Mobile QQ client not exists or the version is too low
                 </string>
@@ -1797,25 +1632,25 @@ horizontal
                 </string>
                 <string name="sohusuishenkan" >Sohu Suishenkan
                 </string>
-                <string name="tencentweibo" >Tencent Weibo
-                </string>
                 <string name="google_plus_client_inavailable" >Google+ client not exists or the version is too low
                 </string>
-                <string name="dropbox" >Dropbox
+                <string name="tencentweibo" >Tencent Weibo
                 </string>
                 <string name="yixin_client_inavailable" >Yixin client not exists or the version is too low
                 </string>
-                <string name="tumblr" >Tumblr
+                <string name="dropbox" >Dropbox
                 </string>
                 <string name="wechat" >Wechat
+                </string>
+                <string name="tumblr" >Tumblr
                 </string>
                 <string name="wechatmoments" >Wechat Moments
                 </string>
                 <string name="sinaweibo" >Sina Weibo
                 </string>
-                <string name="evernote" >Evernote
-                </string>
                 <string name="douban" >Douban
+                </string>
+                <string name="evernote" >Evernote
                 </string>
                 <string name="wechatfavorite" >Wechat Favorite
                 </string>

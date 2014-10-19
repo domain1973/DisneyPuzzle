@@ -166,6 +166,6 @@ public class Answer {
     public static List<Integer> gateStars = new ArrayList<Integer>();
 
     public static boolean isLasterSmallGate(int nextGateNum) {
-        return  nextGateNum == 12 || nextGateNum == 24 || nextGateNum == 36 || nextGateNum== 48 || nextGateNum == 60 || nextGateNum == 72;
+        return nextGateNum == 12 || nextGateNum == 24 || nextGateNum == 36 || nextGateNum == 48 || nextGateNum == 60 || nextGateNum == 72;
     }
 }
