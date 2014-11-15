@@ -20,10 +20,12 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -94,6 +96,8 @@ public class Assets {
     public static BitmapFont gameFont;
     public static BitmapFont otherFont;
 
+    public static List<Series> seriesList;
+
     public static void load() {
         assetManager = new AssetManager();
         assetManager.load("p.atlas", TextureAtlas.class);
@@ -115,12 +119,13 @@ public class Assets {
         createLevelSprite(atlas);
         creteMagicCubes(atlas);
         loadMusic();
+        loadAd();
     }
 
     private static void initConstants() {
         WIDTH = Gdx.graphics.getWidth();
         HEIGHT = Gdx.graphics.getHeight();
-        TOPBAR_HEIGHT = HEIGHT / 12;
+        TOPBAR_HEIGHT = HEIGHT / 16;
         PIECE_SIZE = 29 * HEIGHT / 108;
         SMALL_PIECE_SIZE = PIECE_SIZE / 2;
         SPRITE_SIZE = PIECE_SIZE / 3;
@@ -206,6 +211,54 @@ public class Assets {
             }
             levels.add(s);
         }
+    }
+
+    private static void loadAd() {
+        try {
+            seriesList = new ArrayList<Series>();
+            //动态获取系列、说明、图标
+            FileHandle packFile = Gdx.files.external("ads/ad.atlas");
+            TextureAtlas atlas = new TextureAtlas(packFile);
+            List<Sprite> spriteNames = new ArrayList<Sprite>();
+            for (int i = 0; i < Integer.MAX_VALUE; i++) {
+                Sprite s = atlas.createSprite("series" + i);
+                if (s == null) {
+                    break;
+                }
+                spriteNames.add(s);
+            }
+            FileHandle filehandle = Gdx.files.external("ads/url.txt");
+            String[] urls = filehandle.readString("UTF-8").split("[#]");
+            for (int i = 0; i < spriteNames.size(); i++) {
+                String[] url = getUrl(urls, "series" + i).split("[|]");
+                Series series = new Series().setImage(new Image(spriteNames.get(i)))
+                        .setName(url[0])
+                        .setDetail(url[1])
+                        .setUrl(url[2]);
+                seriesList.add(series);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static String getUrl(String[] urls, String name) {
+        for (String url : urls) {
+            String trim = url.trim();
+            if (trim.split("[=]")[0].contains(name)) {
+                return trim.split("=")[1];
+            }
+        }
+        return null;
+    }
+
+    public static Series getGameInfo(String name) {
+        for (Series series :  seriesList) {
+            if (series.getName().equals(name)) {
+                return series;
+            }
+        }
+        return null;
     }
 
     public static void playSound(Sound sound) {

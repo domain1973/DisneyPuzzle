@@ -87,6 +87,7 @@ public class GameScreen extends BaseScreen {
             addLabels();
             initEffect();
             createTimer();
+            removeLayerBg();
             setShow(true);
         }
         multiplexer = new InputMultiplexer(); // 多输入接收器
@@ -205,7 +206,11 @@ public class GameScreen extends BaseScreen {
 
         String s = "挑战";
         Label c = new Label(s, new Label.LabelStyle(getGameFont(), Color.YELLOW));
-        c.setPosition(Assets.SPRITESIZE * 3 / 2, Assets.TOPBAR_HEIGHT);
+        float size = Assets.SMALL_PIECE_SIZE;
+        float space = size / 20;
+        float y_off = Assets.HEIGHT - (Assets.TOPBAR_HEIGHT + Assets.PIECE_SIZE * 2 + Assets.V_SPACE * 2);
+        float y = y_off - 2 * size - space;
+        c.setPosition(Assets.SPRITESIZE * 3 / 2, y);
         addActor(c);
     }
 

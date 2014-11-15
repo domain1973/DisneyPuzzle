@@ -101,6 +101,8 @@ public class ResultWin extends BaseWin {
                 if (starNum > 0) {//时间已到,回关卡时,不能更新状态
                     int nextGateNum = updateGateNum();
                     gameScreen.getGateScreen().buildGateImage((nextGateNum - 1 )/ Answer.GATE_MAX);
+                }else {
+                    gameScreen.getGateScreen().buildGateImage((Settings.unlockGateNum - 1 )/ Answer.GATE_MAX);
                 }
                 layerBg.remove();
                 ResultWin.this.remove();

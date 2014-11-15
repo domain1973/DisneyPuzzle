@@ -29,6 +29,7 @@ public class OtherScreen extends BaseScreen {
     public void show() {
         super.show();
         createBtns();
+        removeLayerBg();
     }
 
     protected void createBtns() {

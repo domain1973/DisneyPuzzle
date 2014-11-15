@@ -26,11 +26,8 @@ import com.baidu.inf.iis.bcs.BaiduBCS;
 import com.baidu.inf.iis.bcs.auth.BCSCredentials;
 import com.baidu.inf.iis.bcs.request.GetObjectRequest;
 
-import net.umipay.android.UmiPaySDKManager;
-import net.umipay.android.UmiPaymentInfo;
-import net.umipay.android.poll.SmsReceiverService;
-
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,27 +42,11 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
  * Created by Administrator on 2014/10/2.
  */
 public class PEventImpl extends PEvent {
-    private final static String host = "bcs.duapp.com";
-    private final static String accessKey = "NESAXkQp7S1SIeqUncUnTCIl";
-    private final static String secretKey = "ZIQ2NE02RNWimzjyGI0Yh8NF4cAjouLf";
-    private final static String bucket = "ads-series";
-    private final static String path = "/mnt/sdcard/ads/";
-
-    private String adAtlasStr = "/ad.atlas";
-    private File adAtlas = new File(path + "ad.atlas");
-    private String urlStr = "/url.txt";
-    private File url = new File(path + "url.txt");
-    private static final String adsUrl = "http://ads360.duapp.com/House";
-    private static final String gameUrl = adsUrl + "/DisneyPuzzle";
-    public static final String SHARE_TITLE = "有趣的迷宫";
-    public static final String SHARE_TEXT = "太难了,我不行,有种你来!\n" +
-            "点击后,请使用浏览器下载安装.";
     private AndroidLauncher launcher;
-    private String title = "您好,我是小智";
     private ProgressDialog progressDialog;
     private Handler handler;
     private String gameLogoImage;
-    private String TITLE = "迪士尼迷宫";;
+    private String yybUrl;
 
     public PEventImpl(AndroidLauncher androidLauncher) {
         launcher = androidLauncher;
@@ -76,24 +57,25 @@ public class PEventImpl extends PEvent {
     private void openNetworkFailDlg() {
         handler.post(new Runnable() {
             public void run() {
-                new AlertDialog.Builder(launcher).setTitle(title).setMessage("连接不到网络,请检查哦!").setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        return;
-                    }
-                }).setIcon(R.drawable.xiaozi).create().show();
+                new AlertDialog.Builder(launcher).setTitle(Constant.title).setMessage("连接不到网络,请检查哦!").
+                        setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                return;
+                            }
+                        }).setIcon(R.drawable.xiaozi).create().show();
             }
         });
     }
 
     @Override
     public void pay() {
-        if (launcher.isNetwork()) {
+        if (!isConnect2Net(launcher.getContext())) {
             openNetworkFailDlg();
         } else {
             handler.post(new Runnable() {
                 public void run() {
-                    new AlertDialog.Builder(launcher).setTitle(title + ",请选择商品").setIcon(
+                    new AlertDialog.Builder(launcher).setTitle(Constant.title + ",请选择商品").setIcon(
                             R.drawable.xiaozi).setSingleChoiceItems(
                             new String[]{"1元 5颗智慧星+去广告(热销)", "2元 20颗智慧星+去广告(超值)", "5元 100颗智慧星+去广告(土豪)"}, -1,
                             new DialogInterface.OnClickListener() {
@@ -114,7 +96,7 @@ public class PEventImpl extends PEvent {
                                             yuan = 5;
                                             break;
                                     }
-                                    buy(starNum, yuan);
+                                    launcher.getPay().buy(starNum, yuan);
                                 }
                             }
                     ).setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -128,57 +110,40 @@ public class PEventImpl extends PEvent {
         }
     }
 
-    //TODO 替换不同的支付平台代码
-    private void buy(int starNum, int  yuan) {
-        //设置充值信息
-        UmiPaymentInfo paymentInfo = new UmiPaymentInfo();
-        //业务类型，SERVICE_TYPE_QUOTA(固定额度模式，充值金额在支付页面不可修改)，SERVICE_TYPE_RATE(汇率模式，充值金额在支付页面可修改）
-        paymentInfo.setServiceType(UmiPaymentInfo.SERVICE_TYPE_QUOTA);
-        //定额支付金额，单位RMB
-        paymentInfo.setPayMoney(yuan);
-        //订单描述
-        AndroidLauncher.BUYSTARNUM = starNum;
-        paymentInfo.setDesc(AndroidLauncher.BUYSTARNUM + "颗智慧星 + 去广告");
-        //调用支付接口
-        UmiPaySDKManager.showPayView(launcher, paymentInfo);
-    }
-
     @Override
     public void exit(final MainScreen ms) {
         handler.post(new Runnable() {
             public void run() {
-            new AlertDialog.Builder(launcher).setTitle(title).setMessage("确定要退出游戏吗?")
-                    .setNeutralButton("确定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            save();
-                            Intent smsIntent = new Intent(launcher.getContext(), SmsReceiverService.class);
-                            launcher.stopService(smsIntent);
-                            int currentVersion = android.os.Build.VERSION.SDK_INT;
-                            if (currentVersion > android.os.Build.VERSION_CODES.ECLAIR_MR1) {
-                                Intent startMain = new Intent(Intent.ACTION_MAIN);
-                                startMain.addCategory(Intent.CATEGORY_HOME);
-                                startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                launcher.startActivity(startMain);
-                                System.exit(0);
-                            } else {// android2.1
-                                ActivityManager am = (ActivityManager) launcher.getSystemService(launcher.ACTIVITY_SERVICE);
-                                am.restartPackage(launcher.getPackageName());
+                new AlertDialog.Builder(launcher).setTitle(Constant.title).setMessage("确定要退出游戏吗?")
+                        .setNeutralButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                save();
+                                int currentVersion = android.os.Build.VERSION.SDK_INT;
+                                if (currentVersion > android.os.Build.VERSION_CODES.ECLAIR_MR1) {
+                                    Intent startMain = new Intent(Intent.ACTION_MAIN);
+                                    startMain.addCategory(Intent.CATEGORY_HOME);
+                                    startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    launcher.startActivity(startMain);
+                                    System.exit(0);
+                                } else {// android2.1
+                                    ActivityManager am = (ActivityManager) launcher.getSystemService(launcher.ACTIVITY_SERVICE);
+                                    am.restartPackage(launcher.getPackageName());
+                                }
                             }
-                        }
-                    }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    ms.setTouchBack(true);
-                }
-            }).setPositiveButton("爱迪出品", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Uri uri = Uri.parse(adsUrl);
-                    Intent it = new Intent(Intent.ACTION_VIEW, uri);
-                    launcher.startActivity(it);
-                }
-            }).setIcon(R.drawable.xiaozi).create().show();
+                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ms.setTouchBack(true);
+                    }
+                }).setPositiveButton("爱迪出品", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Uri uri = Uri.parse(Constant.adsUrl);
+                        Intent it = new Intent(Intent.ACTION_VIEW, uri);
+                        launcher.startActivity(it);
+                    }
+                }).setIcon(R.drawable.xiaozi).create().show();
             }
         });
     }
@@ -203,19 +168,19 @@ public class PEventImpl extends PEvent {
     public void about() {
         handler.post(new Runnable() {
             public void run() {
-                new AlertDialog.Builder(launcher).setTitle(TITLE).setMessage(
+                new AlertDialog.Builder(launcher).setTitle(Constant.SHARE_TITLE).setMessage(
                         "版本: 1.0.0\n" +
-                        "爱迪工作室 \n" +
-                        "版权所有c 2014\n" +
-                        "客户邮箱\n" +
-                        "domainxu@foxmail.com\n" +
-                        "工作室网址\n" +
-                        "http://ads360.duapp.com/House")
+                                "爱迪工作室 \n" +
+                                "版权所有c 2014\n" +
+                                "客户邮箱\n" +
+                                "domainxu@foxmail.com\n" +
+                                "工作室网址\n" +
+                                "http://ads360.duapp.com/House")
                         .setNegativeButton("关闭", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                }).setIcon(R.drawable.xiaozi).create().show();
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        }).setIcon(R.drawable.xiaozi).create().show();
             }
         });
     }
@@ -224,7 +189,7 @@ public class PEventImpl extends PEvent {
     public void netSlowInfo() {
         handler.post(new Runnable() {
             public void run() {
-                new AlertDialog.Builder(launcher).setTitle(TITLE).setMessage(
+                new AlertDialog.Builder(launcher).setTitle(Constant.SHARE_TITLE).setMessage(
                         "网速太慢,请稍候再试.")
                         .setNegativeButton("关闭", new DialogInterface.OnClickListener() {
                             @Override
@@ -239,18 +204,18 @@ public class PEventImpl extends PEvent {
     public void sos(final GameScreen gs) {
         handler.post(new Runnable() {
             public void run() {
-            new AlertDialog.Builder(launcher).setTitle(title).setMessage("您还有" + Settings.helpNum + "次机会,需要帮助吗?")
-                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Settings.helpNum = Settings.helpNum - 1;
-                            gs.useSos();
-                        }
-                    }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                }
-            }).setIcon(R.drawable.xiaozi).create().show();
+                new AlertDialog.Builder(launcher).setTitle(Constant.title).setMessage("您还有" + Settings.helpNum + "次机会,需要帮助吗?")
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Settings.helpNum = Settings.helpNum - 1;
+                                gs.useSos();
+                            }
+                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).setIcon(R.drawable.xiaozi).create().show();
             }
         });
     }
@@ -259,7 +224,7 @@ public class PEventImpl extends PEvent {
     public void invalidateSos() {
         handler.post(new Runnable() {
             public void run() {
-                new AlertDialog.Builder(launcher).setTitle(title).setMessage("智慧星不够,点击分享可以获取智慧星哦!")
+                new AlertDialog.Builder(launcher).setTitle(Constant.title).setMessage("智慧星不够,点击分享可以获取智慧星哦!")
                         .setPositiveButton("关闭", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -283,7 +248,7 @@ public class PEventImpl extends PEvent {
     public void resetGame() {
         handler.post(new Runnable() {
             public void run() {
-                new AlertDialog.Builder(launcher).setTitle(title).setMessage("是否重置您的进度?").setPositiveButton("是", new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(launcher).setTitle(Constant.title).setMessage("是否重置您的进度?").setPositiveButton("是", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Settings.unlockGateNum = 0;
@@ -313,13 +278,13 @@ public class PEventImpl extends PEvent {
                         .setPositiveButton("下载", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                    openProgressBar();
-                                    new Thread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            openFile(downLoadFile(series.getUrl()));
-                                        }
-                                    }).start();
+                                openProgressBar();
+                                new Thread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        openFile(downLoadFile(series.getUrl()));
+                                    }
+                                }).start();
                             }
                         })
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -370,10 +335,14 @@ public class PEventImpl extends PEvent {
                     ShareSDK.initSDK(launcher);
                     OnekeyShare oks = new OnekeyShare();
                     oks.setNotification(R.drawable.ic_launcher, launcher.getContext().getString(R.string.app_name));
-                    oks.setTitle(SHARE_TITLE);
-                    oks.setText(SHARE_TEXT);
+                    oks.setTitle(Constant.SHARE_TITLE);
+                    oks.setText(Constant.SHARE_TEXT);
                     oks.setImagePath(gameLogoImage);
-                    oks.setUrl(gameUrl);
+                    if (yybUrl != null && yybUrl.length() > 0) {
+                        oks.setUrl(yybUrl);
+                    } else {
+                        oks.setUrl(Constant.gameUrl);
+                    }
                     // 令编辑页面显示为Dialog模式
                     oks.setDialogMode();
                     // 在自动授权时可以禁用SSO方式
@@ -469,23 +438,29 @@ public class PEventImpl extends PEvent {
 
     private void initBucket() {
         try {
-            File file = new File(path);
+            File file = new File(Constant.path);
             if (!file.exists()) {
                 file.mkdir();
             }
-            BCSCredentials credentials = new BCSCredentials(accessKey, secretKey);
-            BaiduBCS baiduBCS = new BaiduBCS(credentials, host);
+            BCSCredentials credentials = new BCSCredentials(Constant.accessKey, Constant.secretKey);
+            BaiduBCS baiduBCS = new BaiduBCS(credentials, Constant.host);
             baiduBCS.setDefaultEncoding("UTF-8"); // Default UTF-8
-            getObjectWithDestFile(baiduBCS, adAtlasStr, adAtlas);
-            getObjectWithDestFile(baiduBCS, urlStr, url);
-            getObjectWithDestFile(baiduBCS, "/ad.png" , new File(path + "ad.png"));
+            getObjectWithDestFile(baiduBCS, Constant.adAtlasStr, Constant.adAtlas);
+            getObjectWithDestFile(baiduBCS, Constant.urlStr, Constant.url);
+            getObjectWithDestFile(baiduBCS, Constant.yybStr, Constant.yyb);
+            getObjectWithDestFile(baiduBCS, "/ad.png" , new File(Constant.path + "ad.png"));
+
+            FileInputStream fis = new FileInputStream(Constant.yyb);
+            byte[] bts = new byte[128];
+            fis.read(bts);
+            yybUrl = new String(bts).trim();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     private void getObjectWithDestFile(BaiduBCS baiduBCS, String name, File file) {
-        GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, name);
+        GetObjectRequest getObjectRequest = new GetObjectRequest(Constant.bucket, name);
         baiduBCS.getObject(getObjectRequest, file);
     }
 }

@@ -2554,6 +2554,7 @@ com.ads.puzzle.disnep.android.PEventImpl -> com.ads.puzzle.disnep.android.e:
     android.app.ProgressDialog progressDialog -> g
     android.os.Handler handler -> h
     java.lang.String gameLogoImage -> i
+    java.lang.String TITLE -> j
     void openNetworkFailDlg() -> i
     void pay() -> a
     void exit(com.ads.puzzle.disnep.screen.MainScreen) -> a
@@ -2573,12 +2574,13 @@ com.ads.puzzle.disnep.android.PEventImpl -> com.ads.puzzle.disnep.android.e:
     java.lang.String access$000(com.ads.puzzle.disnep.android.PEventImpl) -> a
     com.ads.puzzle.disnep.android.AndroidLauncher access$100(com.ads.puzzle.disnep.android.PEventImpl) -> b
     void access$200(com.ads.puzzle.disnep.android.PEventImpl,int,int) -> a
-    void access$300(com.ads.puzzle.disnep.android.PEventImpl) -> c
+    java.lang.String access$300(com.ads.puzzle.disnep.android.PEventImpl) -> c
     void access$400(com.ads.puzzle.disnep.android.PEventImpl) -> d
-    java.io.File access$500(com.ads.puzzle.disnep.android.PEventImpl,java.lang.String) -> a
-    void access$600(com.ads.puzzle.disnep.android.PEventImpl,java.io.File) -> a
-    void access$700(com.ads.puzzle.disnep.android.PEventImpl) -> e
-    java.lang.String access$800(com.ads.puzzle.disnep.android.PEventImpl) -> f
+    void access$500(com.ads.puzzle.disnep.android.PEventImpl) -> e
+    java.io.File access$600(com.ads.puzzle.disnep.android.PEventImpl,java.lang.String) -> a
+    void access$700(com.ads.puzzle.disnep.android.PEventImpl,java.io.File) -> a
+    void access$800(com.ads.puzzle.disnep.android.PEventImpl) -> f
+    java.lang.String access$900(com.ads.puzzle.disnep.android.PEventImpl) -> g
 com.ads.puzzle.disnep.android.PEventImpl$1 -> com.ads.puzzle.disnep.android.f:
     com.ads.puzzle.disnep.android.PEventImpl this$0 -> a
     void run() -> run

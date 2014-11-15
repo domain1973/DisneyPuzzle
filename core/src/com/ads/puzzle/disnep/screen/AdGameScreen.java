@@ -5,26 +5,19 @@ import com.ads.puzzle.disnep.Puzzle;
 import com.ads.puzzle.disnep.Series;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 /**
  * Created by Administrator on 2014/8/10.
  */
 public class AdGameScreen extends BaseScreen {
-    private List<Series> seriesList;
     private float margin = Assets.WIDTH / 15;
     private float seriesW = margin * 2.5f;
     private float seriesH = seriesW;
@@ -41,9 +34,8 @@ public class AdGameScreen extends BaseScreen {
             super.show();
             createBtns();
             createAdLabel();
-            loadAd();
-            for (int i = 0; i < seriesList.size(); i++) {
-                final Series series = seriesList.get(i);
+            for (int i = 0; i < Assets.seriesList.size(); i++) {
+                final Series series = Assets.seriesList.get(i);
                 Image image = series.getImage();
                 ImageButton seriesBtn = new ImageButton(image.getDrawable(), image.getDrawable(), image.getDrawable());
                 seriesBtn.addListener(new InputListener() {
@@ -65,13 +57,13 @@ public class AdGameScreen extends BaseScreen {
         } else {
             Gdx.input.setInputProcessor(getStage());
         }
-        if (seriesList.size() == 0) {
+        if (Assets.seriesList.size() == 0) {
             getPuzzle().getPEvent().netSlowInfo();
         }
     }
 
     private void createAdLabel() {
-        String str = "爱迪出品";
+        String str = "爱迪精品";
         BitmapFont font = getOtherFont();
         Label l = new Label(str, new Label.LabelStyle(font, Color.WHITE));
         float w = font.getBounds(str).width;
@@ -103,44 +95,5 @@ public class AdGameScreen extends BaseScreen {
             getPuzzle().setScreen(baseScreen);
         }
         super.render(delta);
-    }
-
-    private void loadAd() {
-        try {
-            seriesList = new ArrayList<Series>();
-            //动态获取系列、说明、图标
-            FileHandle packFile = Gdx.files.external("ads/ad.atlas");
-            TextureAtlas atlas = new TextureAtlas(packFile);
-            List<Sprite> spriteNames = new ArrayList<Sprite>();
-            for (int i = 0; i < Integer.MAX_VALUE; i++) {
-                Sprite s = atlas.createSprite("series" + i);
-                if (s == null) {
-                    break;
-                }
-                spriteNames.add(s);
-            }
-            FileHandle filehandle = Gdx.files.external("ads/url.txt");
-            String[] urls = filehandle.readString("UTF-8").split("[#]");
-            for (int i = 0; i < spriteNames.size(); i++) {
-                String[] url = getUrl(urls, "series" + i).split("[|]");
-                Series series = new Series().setImage(new Image(spriteNames.get(i)))
-                        .setName(url[0])
-                        .setDetail(url[1])
-                        .setUrl(url[2]);
-                seriesList.add(series);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private String getUrl(String[] urls, String name) {
-        for (String url : urls) {
-            String trim = url.trim();
-            if (trim.split("[=]")[0].contains(name)) {
-                return trim.split("=")[1];
-            }
-        }
-        return null;
     }
 }

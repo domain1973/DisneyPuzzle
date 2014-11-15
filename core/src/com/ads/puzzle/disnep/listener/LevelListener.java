@@ -3,15 +3,21 @@ package com.ads.puzzle.disnep.listener;
 import com.ads.puzzle.disnep.Answer;
 import com.ads.puzzle.disnep.Assets;
 import com.ads.puzzle.disnep.Puzzle;
+import com.ads.puzzle.disnep.Series;
 import com.ads.puzzle.disnep.Settings;
 import com.ads.puzzle.disnep.screen.GateScreen;
 import com.ads.puzzle.disnep.screen.LevelScreen;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 
 
 /**
@@ -53,13 +59,23 @@ public class LevelListener extends GestureDetector.GestureAdapter {
         stage.getCamera().unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0)); // 坐标转化
         int level = (int) Math.abs(position / Assets.WIDTH);
         int tLevel = Settings.unlockGateNum / Answer.GATE_MAX;
+        float v = Assets.WIDTH - 2 * Assets.LEVEL_IMAGE_OFF_SIZE;
+        Rectangle bounds = new Rectangle(Assets.LEVEL_IMAGE_OFF_SIZE, (Assets.HEIGHT - Assets.WIDTH) / 2 + Assets.LEVEL_IMAGE_OFF_SIZE, v, v);
         if (level <= tLevel && level != Assets.LEVEL_MAX) {
-            float v = Assets.WIDTH - 2 * Assets.LEVEL_IMAGE_OFF_SIZE;
-            Rectangle bounds = new Rectangle(Assets.LEVEL_IMAGE_OFF_SIZE, (Assets.HEIGHT - Assets.WIDTH) / 2 + Assets.LEVEL_IMAGE_OFF_SIZE, v, v);
             if (bounds.contains(touchPoint.x, touchPoint.y)) {
                 Assets.playSound(Assets.btnSound);
                 gateScreen.buildGateImage(level);
                 puzzle.setScreen(gateScreen);
+            }
+        } else if (level == Assets.LEVEL_MAX) {
+            if (bounds.contains(touchPoint.x, touchPoint.y)) {
+                Assets.playSound(Assets.btnSound);
+                Series series = Assets.getGameInfo("数字的思考");
+                if (series == null) {
+                    gateScreen.getPuzzle().getPEvent().netSlowInfo();
+                } else {
+                    gateScreen.getPuzzle().getPEvent().install(series);
+                }
             }
         }
         return false;

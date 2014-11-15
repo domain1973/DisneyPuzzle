@@ -154,8 +154,8 @@ public class MainScreen extends BaseScreen {
     public void render(float delta) {
         if (touchBack && Gdx.input.isKeyPressed(Input.Keys.BACK)) {
             if (!isBackFlag()) {
-                touchBack = false;
                 puzzle.getPEvent().exit(MainScreen.this);
+                touchBack = false;
             }
         } else {
             setBackFlag(false);

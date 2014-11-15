@@ -14,17 +14,17 @@
         revision="19.1.0"
         sha1="63776836123d01eb559a4924bb180d659970f1d1"/>
     <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\YoumiSdk_v4.09_2014-06-16-4f6d9a1b065b482418b3abba96642bbd4628dbfb.jar"
-        jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\YoumiSdk_v4.09_2014-06-16.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="160f21765370085650cbc089377fecb052903d17"/>
-    <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\umilocalpaysdk-V221-487a85891ee9c221da81381278547c224cb5288c.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\umilocalpaysdk-V221.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="e84c6949d4329bc95b4e5d90555bbe1f35873edc"/>
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\YoumiSdk_v4.09_2014-06-16-4f6d9a1b065b482418b3abba96642bbd4628dbfb.jar"
+        jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\YoumiSdk_v4.09_2014-06-16.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="160f21765370085650cbc089377fecb052903d17"/>
     <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\mframework-a665a6bb91df88c5a759f5cb4d921a431dee29f2.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\mframework.jar"
@@ -32,17 +32,17 @@
         revision="19.1.0"
         sha1="25509058b34a5ee08dbf66e57078e3083735d200"/>
     <item
-        dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-2.3.12-c8871d421e3ab763bfe43c5cda691e47768b67b1.jar"
-        jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\ShareSDK-Wechat-2.3.12.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="e5f0255fe33abea21b7fe25b753dc9f5c17886a3"/>
-    <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\ShareSDK-Core-2.3.12-68fdf092bab132fd9668c798da8bce5d427c9983.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\ShareSDK-Core-2.3.12.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="45d18d4512bd409c58a464dcacb567b35e780c90"/>
+    <item
+        dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-2.3.12-c8871d421e3ab763bfe43c5cda691e47768b67b1.jar"
+        jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\ShareSDK-Wechat-2.3.12.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e5f0255fe33abea21b7fe25b753dc9f5c17886a3"/>
     <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\android-support-v4-c433f62a84c43c28bb34b61ea3a643f72dcb643c.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\android-support-v4.jar"
@@ -84,7 +84,7 @@
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\core\build\libs\core-1.0.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="2c483515ba14798b2eb15370342bf20c7d3a53c9"/>
+        sha1="e2a7ec514140d9bc234afb89ebc9fe8de6d151b7"/>
     <item
         dex="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-Core-2.3.12-627022b847f1e7598ccda53604bfa7631e80ed43.jar"
         jar="F:\ADWisdomHouse\Game\Puzzle\DisneyPuzzle\android\libs\ShareSDK-Wechat-Core-2.3.12.jar"
